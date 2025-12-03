@@ -1,9 +1,19 @@
-﻿# QA Checklists
-## Regression
-- Login/Logout, Dashboard, Navigation, API, Forms
+﻿# QA CHECKLISTS
 
-## Pre-Release
-- Smoke pass, Critical bugs fixed, UI responsive, Accessibility, Test data reset
+## Pre-release
+- [ ] Smoke tests executed
+- [ ] Critical bugs resolved
+- [ ] API endpoints validated
+- [ ] UI screens verified
+- [ ] Accessibility checks done
 
-## Smoke
-- App launch, Navigation, API, Basic login/logout
+## Regression Suite
+- [ ] Login flows
+- [ ] Dashboard widgets
+- [ ] Android app login
+- [ ] API auth & CRUD
+
+## Smoke Tests
+- [ ] Basic login/logout
+- [ ] Dashboard loads
+- [ ] API responds

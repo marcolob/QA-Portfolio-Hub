@@ -1,7 +1,7 @@
-﻿Test Case ID,Module,Type,Priority,Status
-TC001,Login,Functional,High,Not Executed
-TC002,Login,Functional,High,Not Executed
-TC003,Login,Functional,Medium,Not Executed
+﻿TestID,Module,Type,Priority,Execution Status
+TC001,Web Login,Functional,High,Not Executed
+TC002,Web Login,Functional,Medium,Not Executed
+TC003,Web Login,Functional,Low,Not Executed
 TC004,Dashboard,Functional,High,Not Executed
 TC005,Dashboard,Functional,Medium,Not Executed
 TC006,Android Login,Functional,High,Not Executed
