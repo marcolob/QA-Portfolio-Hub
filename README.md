@@ -34,13 +34,10 @@ QA-Portfolio-Hub/
 │   ├── checklists.md
 │   └── test_matrix.csv
 ├── bug_reports/
-│   ├── login_page_bug.md
-│   ├── cart_crash_bug.md
-│   └── android_ui_overflow.md
 ├── reports/
-│   ├── sample_test_report.md
 │   └── screenshots/
-└── scripts.js / styles.css
+├── scripts.js
+└── styles.css
 
 ---
 
@@ -86,6 +83,6 @@ A complete Test Execution Report with PASS/FAIL summary and observations.
 ---
 
 ## 📬 Contact
-**Marco Lo Bianco – QA Manual manual Automation engineer**  
+**Marco Lo Bianco – QA Manual Automation Engineer**  
 GitHub: https://github.com/marcolob  
 Email: m.lobianco@hotmail.it
