@@ -1,41 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QA Manual Portfolio – Marco Lo Bianco</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Portfolio – Marco Lo Bianco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>QA Manual Portfolio – Marco Lo Bianco</h1>
-        <p>Showcasing QA test planning, manual & API test cases, bug reports, checklists, and test execution reports.</p>
-    </header>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>Marco Lo Bianco</h1>
+      <p>QA Manual & Automation Engineer – Web & Android</p>
+    </div>
+  </header>
 
-    <main>
-        <section>
-            <h2>📂 Portfolio Structure</h2>
-            <ul>
-                <li><a href="docs/test_plan.md" target="_blank">Test Plan</a> – Full QA test strategy</li>
-                <li><a href="docs/manual_tests.md" target="_blank">Manual Test Cases</a> – Web & Android functional tests</li>
-                <li><a href="docs/api_tests.md" target="_blank">API Tests</a> – Postman examples and validation</li>
-                <li><a href="docs/checklists.md" target="_blank">Checklists</a> – Pre-release, regression, and smoke</li>
-                <li><a href="docs/test_matrix.csv" target="_blank">Test Matrix</a> – Priority, coverage, execution status</li>
-                <li><a href="bug_reports/" target="_blank">Bug Reports</a> – Example defects with screenshots</li>
-                <li><a href="reports/sample_test_report.md" target="_blank">Test Reports</a> – Execution summary</li>
-            </ul>
-        </section>
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Portfolio Sections -->
+    <section class="cards-section">
+      <div class="card">
+        <h2>Docs</h2>
+        <ul>
+          <li><a href="docs/test_plan.md" target="_blank">Test Plan</a></li>
+          <li><a href="docs/manual_tests.md" target="_blank">Manual Test Cases</a></li>
+          <li><a href="docs/api_tests.md" target="_blank">API Tests</a></li>
+          <li><a href="docs/checklists.md" target="_blank">Checklists</a></li>
+          <li><a href="docs/test_matrix.csv" target="_blank">Test Matrix</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Bug Reports</h2>
+        <ul>
+          <li><a href="bug_reports/" target="_blank">Example Bug Reports</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Reports</h2>
+        <ul>
+          <li><a href="reports/sample_test_report.md" target="_blank">Sample Test Report</a></li>
+          <li><a href="reports/screenshots/" target="_blank">Screenshots</a></li>
+        </ul>
+      </div>
+    </section>
 
-        <section>
-            <h2>📬 Contact</h2>
-            <p>Marco Lo Bianco – QA Manual Automation Engineer</p>
-            <p>GitHub: <a href="https://github.com/marcolob" target="_blank">github.com/marcolob</a></p>
-            <p>Email: <a href="mailto:m.lobianco@hotmail.it">m.lobianco@hotmail.it</a></p>
-        </section>
-    </main>
+    <!-- Accordion Section for Test Cases -->
+    <section class="accordion-section">
+      <h2>Test Cases Overview</h2>
+      <div class="accordion">
+        <button class="accordion-header">Web Login – TC001</button>
+        <div class="accordion-body">
+          <p><strong>Steps:</strong> Open login page, enter valid credentials, click login.</p>
+          <p><strong>Expected:</strong> Dashboard displayed.</p>
+          <p><strong>Status:</strong> [PASS/FAIL]</p>
+        </div>
+        <button class="accordion-header">Android Login – TC006</button>
+        <div class="accordion-body">
+          <p><strong>Steps:</strong> Open app, enter valid credentials, click login.</p>
+          <p><strong>Expected:</strong> Main screen displayed.</p>
+          <p><strong>Status:</strong> [PASS/FAIL]</p>
+        </div>
+        <button class="accordion-header">API Auth – TC010</button>
+        <div class="accordion-body">
+          <p><strong>Endpoint:</strong> POST /api/login</p>
+          <p><strong>Request:</strong> JSON payload with username/password.</p>
+          <p><strong>Expected:</strong> 200 OK with token.</p>
+          <p><strong>Status:</strong> [PASS/FAIL]</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Marco Lo Bianco</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Marco Lo Bianco – QA Manual Portfolio</p>
+  </footer>
+
+  <script>
+    // Accordion functionality
+    const accHeaders = document.querySelectorAll(".accordion-header");
+    accHeaders.forEach(header => {
+      header.addEventListener("click", () => {
+        const body = header.nextElementSibling;
+        body.style.display = body.style.display === "block" ? "none" : "block";
+        header.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
