@@ -1,0 +1,12 @@
+﻿Test Case ID,Module,Type,Priority,Status
+TC001,Login,Functional,High,Not Executed
+TC002,Login,Functional,High,Not Executed
+TC003,Login,Functional,Medium,Not Executed
+TC004,Dashboard,Functional,High,Not Executed
+TC005,Dashboard,Functional,Medium,Not Executed
+TC006,Android Login,Functional,High,Not Executed
+TC007,Android Login,Functional,Medium,Not Executed
+TC008,Android Login,Functional,Medium,Not Executed
+TC009,Android Login,Functional,Low,Not Executed
+TC010,API Auth,API,High,Not Executed
+TC011,API Users,API,Medium,Not Executed
