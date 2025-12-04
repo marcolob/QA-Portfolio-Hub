@@ -3,30 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bug Reports - Marco Lob</title>
+<title>Bug Reports - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../styles.css">
+<style>
+/* Stati dei bug */
+.card h3 .fixed { color: #4caf50; }     /* verde */
+.card h3 .open { color: #ff4c4c; }      /* rosso */
+.card h3 .medium { color: #ffb74d; }    /* arancione */
+
+/* Lista ordinata leggibile */
+.card ol { padding-left: 1.2rem; }
+
+/* Spazio tra i dettagli */
+.card ul li { margin-bottom: 0.5rem; }
+
+/* Campi chiari rispetto al label */
+.card ul li strong {
+  color: #f2f2f2; /* label più chiara */
+}
+.card ul li span.field-value {
+  color: #bdbdbd; /* valore del campo più chiaro */
+}
+
+/* Back home margine */
+.back-home { display: inline-block; margin-top: 2rem; text-align: center; }
+</style>
 </head>
 <body>
 
 <div class="container">
 
-  <section class="hero">
+  <div class="hero fade-in">
     <h1>🐛 Bug Reports</h1>
-    <p>Detailed bug reports for Web & Mobile projects including steps to reproduce, screenshots, severity, and resolution.</p>
-  </section>
+    <p>Detailed bug reports for Web & Mobile projects, including steps to replicate, severity, priority, environment, and status.</p>
+  </div>
 
-  <section class="cards">
-    <h2>Recent Bugs</h2>
-    <ul>
-      <li>Web Login – Critical issue fixed ✅</li>
-      <li>Mobile Payment – UI misalignment ⚠</li>
-      <li>REST API – Timeout on GET requests ⚠</li>
-      <li>Form Validation – Missing error messages ⚠</li>
-    </ul>
+  <section class="cards fade-in">
+
+    <!-- Bug 1 -->
+    <div class="card">
+      <h3>Web Login – Fixed <span class="fixed">✅</span></h3>
+      <ul>
+        <li><strong>Summary:</strong> <span class="field-value">Login fails with 500 Internal Server Error on invalid input. Now fixed.</span></li>
+        <li><strong>Related Test Case:</strong> <span class="field-value">TC-LOGIN-001 – Valid Login</span></li>
+        <li><strong>Jira Ticket:</strong> <span class="field-value">QA-1001</span></li>
+        <li><strong>TestRail Case:</strong> <span class="field-value">TR-0001</span></li>
+        <li><strong>Steps to Replicate:</strong>
+          <ol>
+            <li><span class="field-value">Navigate to login page</span></li>
+            <li><span class="field-value">Enter valid credentials</span></li>
+            <li><span class="field-value">Click "Login"</span></li>
+          </ol>
+        </li>
+        <li><strong>Expected Result:</strong> <span class="field-value">User redirected to dashboard</span></li>
+        <li><strong>Actual Result:</strong> <span class="field-value">500 Internal Server Error → Fixed</span></li>
+        <li><strong>Priority:</strong> <span class="field-value">🔴 High</span></li>
+        <li><strong>Severity:</strong> <span class="field-value">Critical</span></li>
+        <li><strong>Status:</strong> <span class="field-value">Fixed</span></li>
+        <li><strong>Environment:</strong> <span class="field-value">Chrome 120, Windows 11</span></li>
+        <li><strong>Reported On:</strong> <span class="field-value">July 30, 2025</span></li>
+        <li><strong>Reported By:</strong> <span class="field-value">Marco Lo Bianco</span></li>
+      </ul>
+    </div>
+
+    <!-- Bug 2 -->
+    <div class="card">
+      <h3>Mobile Payment – UI misalignment <span class="open">❌</span></h3>
+      <ul>
+        <li><strong>Summary:</strong> <span class="field-value">Payment buttons overlap on Android devices.</span></li>
+        <li><strong>Related Test Case:</strong> <span class="field-value">TC-PAY-003 – Checkout Flow</span></li>
+        <li><strong>Jira Ticket:</strong> <span class="field-value">QA-1002</span></li>
+        <li><strong>TestRail Case:</strong> <span class="field-value">TR-0002</span></li>
+        <li><strong>Steps to Replicate:</strong>
+          <ol>
+            <li><span class="field-value">Open the mobile app on an Android Pixel 6.</span></li>
+            <li><span class="field-value">Navigate to the checkout page with at least 2 products in the cart.</span></li>
+            <li><span class="field-value">Observe the layout of the payment buttons in portrait and landscape mode.</span></li>
+            <li><span class="field-value">Rotate the device and check for alignment issues.</span></li>
+            <li><span class="field-value">Attempt a payment to see if buttons respond correctly.</span></li>
+            <li><span class="field-value">Capture screenshots of the overlapping elements.</span></li>
+          </ol>
+        </li>
+        <li><strong>Expected Result:</strong> <span class="field-value">Buttons aligned correctly in all orientations and responsive to taps.</span></li>
+        <li><strong>Actual Result:</strong> <span class="field-value">Buttons overlap and are partially unclickable.</span></li>
+        <li><strong>Priority:</strong> <span class="field-value">🟠 Medium</span></li>
+        <li><strong>Severity:</strong> <span class="field-value">Major</span></li>
+        <li><strong>Status:</strong> <span class="field-value">Open</span></li>
+        <li><strong>Environment:</strong> <span class="field-value">Android 14, App v2.9.7</span></li>
+        <li><strong>Attachments:</strong> <span class="field-value">Screenshot placeholder</span></li>
+        <li><strong>Reported By:</strong> <span class="field-value">Marco Lo Bianco</span></li>
+      </ul>
+    </div>
+
+    <!-- Bug 3 -->
+    <div class="card">
+      <h3>REST API – Timeout <span class="open">❌</span></h3>
+      <ul>
+        <li><strong>Summary:</strong> <span class="field-value">GET /api/v1/products sometimes times out.</span></li>
+        <li><strong>Related Test Case:</strong> <span class="field-value">TC-API-005 – Fetch Products</span></li>
+        <li><strong>Jira Ticket:</strong> <span class="field-value">QA-1003</span></li>
+        <li><strong>TestRail Case:</strong> <span class="field-value">TR-0003</span></li>
+        <li><strong>Steps to Replicate:</strong>
+          <ol>
+            <li><span class="field-value">Send multiple GET requests to /api/v1/products using Postman or automated script.</span></li>
+            <li><span class="field-value">Measure response times and note any requests exceeding 2s.</span></li>
+            <li><span class="field-value">Repeat under different network conditions (WiFi / Mobile Data).</span></li>
+          </ol>
+        </li>
+        <li><strong>Expected Result:</strong> <span class="field-value">All responses returned within 2s.</span></li>
+        <li><strong>Actual Result:</strong> <span class="field-value">Some requests timeout or fail.</span></li>
+        <li><strong>Priority:</strong> <span class="field-value">🔴 High</span></li>
+        <li><strong>Severity:</strong> <span class="field-value">Critical</span></li>
+        <li><strong>Status:</strong> <span class="field-value">Open</span></li>
+        <li><strong>Environment:</strong> <span class="field-value">API v1.22.3, WiFi</span></li>
+        <li><strong>Reported By:</strong> <span class="field-value">Marco Lo Bianco</span></li>
+      </ul>
+    </div>
+
+    <!-- Bug 4 -->
+    <div class="card">
+      <h3>Mobile App – Token not validated <span class="medium">🟠</span></h3>
+      <ul>
+        <li><strong>Summary:</strong> <span class="field-value">Backend does not validate access token; login fails silently on mobile.</span></li>
+        <li><strong>Related Test Case:</strong> <span class="field-value">TC-LOGIN-004 – Login via mobile app</span></li>
+        <li><strong>Jira Ticket:</strong> <span class="field-value">QA-1004</span></li>
+        <li><strong>TestRail Case:</strong> <span class="field-value">TR-0004</span></li>
+        <li><strong>Steps to Replicate:</strong>
+          <ol>
+            <li><span class="field-value">Install and open the mobile app v2.9.7 on Android 14.</span></li>
+            <li><span class="field-value">Navigate to login screen.</span></li>
+            <li><span class="field-value">Enter valid username & password.</span></li>
+            <li><span class="field-value">Tap "Login" and monitor the backend response.</span></li>
+            <li><span class="field-value">Observe if session is created and user is redirected.</span></li>
+            <li><span class="field-value">Check network logs for token validation.</span></li>
+            <li><span class="field-value">User remains on login screen → bug reproduced.</span></li>
+          </ol>
+        </li>
+        <li><strong>Expected Result:</strong> <span class="field-value">Backend verifies token, creates session, and grants access.</span></li>
+        <li><strong>Actual Result:</strong> <span class="field-value">Access token generated, no session initiation, user stuck on login.</span></li>
+        <li><strong>Priority:</strong> <span class="field-value">🟠 Medium</span></li>
+        <li><strong>Severity:</strong> <span class="field-value">Major</span></li>
+        <li><strong>Status:</strong> <span class="field-value">Selected for Development</span></li>
+        <li><strong>Environment:</strong> <span class="field-value">Android 14, App v2.9.7, API v1.22.3</span></li>
+        <li><strong>Attachments:</strong> <span class="field-value">Log placeholder, screen-recording placeholder</span></li>
+        <li><strong>Reported By:</strong> <span class="field-value">Marco Lo Bianco</span></li>
+        <li><strong>Assignee:</strong> <span class="field-value">Not assigned</span></li>
+      </ul>
+    </div>
+
   </section>
 
   <section>
-    <a class="card" href="/index.html">⬅ Back to Home</a>
+    <a class="card back-home" href="/index.html">⬅ Back to Home</a>
   </section>
 
 </div>

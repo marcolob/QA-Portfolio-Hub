@@ -3,26 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>API Tests</title>
+<title>API Tests - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../styles.css">
 <style>
-  .api-section .card {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
   details {
     background: #1e1e1e;
     color: #fff;
     border-radius: 8px;
     padding: 10px 15px;
+    margin-bottom: 1rem;
     overflow-x: auto;
   }
 
   details[open] pre {
-    max-height: 600px;   /* altezza massima espandibile */
-    overflow-y: auto;     /* scrollbar verticale solo se serve */
+    max-height: 500px;
+    overflow-y: auto;
   }
 
   summary {
@@ -37,12 +32,27 @@
     background: transparent;
     padding: 0;
     color: #fff;
-    white-space: pre-wrap;   /* wrap automatico */
+    white-space: pre-wrap;
     word-break: break-word;
   }
 
+  .method-get summary { color: #ff4c4c; }      /* rosso */
+  .method-post summary { color: #4c9eff; }     /* blu */
+  .method-put summary { color: #ffa500; }      /* arancione */
+  .method-delete summary { color: #00c853; }   /* verde */
+
   .placeholder {
     opacity: 0.6;
+    font-style: italic;
+  }
+
+  .case-title {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  .field-label {
+    color: #bdbdbd;
     font-style: italic;
   }
 </style>
@@ -52,117 +62,242 @@
 <div class="container">
 
   <div class="hero fade-in">
-    <h1>🔗 API Testing</h1>
-    <p>
-      API testing performed using <strong>Postman</strong>. Includes functional & negative tests, 
-      JSON Schema Validation, authentication workflows and edge-case handling.
-      <br>
-      <span class="placeholder">Screenshots & Postman Collection: Working on…</span>
-    </p>
+    <h1>🔌 API Testing</h1>
+    <p>Professional API test cases with structured steps, headers, body, expected responses, and notes.</p>
+    <p class="placeholder">Screenshots & Postman Collection: Coming Soon…</p>
   </div>
 
   <section class="cards fade-in api-section">
 
-    <!-- AUTH SUITE -->
-    <div class="card">
-      <h2>🔐 Suite 1 — User Authentication</h2>
-      <p><strong>Endpoints:</strong></p>
-      <ul>
-        <li><code>POST /api/v1/auth/login</code></li>
-        <li><code>POST /api/v1/auth/register</code></li>
-        <li><code>POST /api/v1/auth/refresh</code></li>
-      </ul>
+    <!-- GET Requests -->
+    <details class="method-get">
+      <summary>GET Requests</summary>
 
-      <h3>Test Scenarios</h3>
-      <ul>
-        <li>Valid login → 200 OK + token</li>
-        <li>Invalid password → 401 Unauthorized</li>
-        <li>Missing fields → 400 Bad Request</li>
-        <li>Token refresh → returns new JWT token</li>
-      </ul>
+      <div class="case">
+        <p class="case-title">1. Retrieve All Users</p>
+        <p><span class="field-label">Method:</span> GET</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users</p>
+        <p><span class="field-label">Headers:</span> Authorization: Bearer &lt;token&gt;, Accept: application/json</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>[
+  {"id":1,"name":"Alice","email":"alice@example.com"},
+  {"id":2,"name":"Bob","email":"bob@example.com"}
+]</pre></details>
+        <p><span class="field-label">Notes:</span> Should return all users. Pagination may apply.</p>
+      </div>
 
-      <details>
-        <summary>Postman Test Script Example</summary>
-        <pre><code>// Validate login response
-pm.test("Status is 200", function () {
-    pm.response.to.have.status(200);
-});
+      <div class="case">
+        <p class="case-title">2. Retrieve User by ID</p>
+        <p><span class="field-label">Method:</span> GET</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users/42</p>
+        <p><span class="field-label">Headers:</span> Authorization: Bearer &lt;token&gt;, Accept: application/json</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"id":42,"name":"Charlie","email":"charlie@example.com"}</pre></details>
+        <details><summary>Error Response</summary><pre>{"error":"User not found"}</pre></details>
+        <p><span class="field-label">Notes:</span> If the user ID does not exist, should return 404 Not Found.</p>
+      </div>
 
-pm.test("Token exists", function () {
-    pm.expect(pm.response.json()).to.have.property("token");
-});
+      <div class="case">
+        <p class="case-title">3. Filter Users by Role</p>
+        <p><span class="field-label">Method:</span> GET</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users?role=admin</p>
+        <p><span class="field-label">Headers:</span> Authorization: Bearer &lt;token&gt;, Accept: application/json</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>[{"id":10,"name":"Dana","role":"admin"}]</pre></details>
+        <p><span class="field-label">Notes:</span> Only users with role 'admin' returned.</p>
+      </div>
 
-// Save token
-pm.collectionVariables.set("auth_token", pm.response.json().token);
-</code></pre>
-      </details>
+      <div class="case">
+        <p class="case-title">4. Paginated Products List</p>
+        <p><span class="field-label">Method:</span> GET</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/products?page=2&limit=3</p>
+        <p><span class="field-label">Headers:</span> Authorization: Bearer &lt;token&gt;, Accept: application/json</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{
+  "products":[
+    {"id":101,"name":"Wireless Mouse"},
+    {"id":102,"name":"USB Keyboard"},
+    {"id":103,"name":"HD Monitor"}
+  ],
+  "pagination":{"page":2,"limit":3,"total_items":9}
+}</pre></details>
+        <p><span class="field-label">Notes:</span> Ensure pagination metadata is correct.</p>
+      </div>
 
-      <p><span class="placeholder">[Screenshot results coming soon]</span></p>
-    </div>
+      <div class="case">
+        <p class="case-title">5. Search Products by Keyword</p>
+        <p><span class="field-label">Method:</span> GET</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/products?search=wireless</p>
+        <p><span class="field-label">Headers:</span> Authorization: Bearer &lt;token&gt;, Accept: application/json</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>[
+  {"id":101,"name":"Wireless Mouse"},
+  {"id":106,"name":"Wireless Charger"}
+]</pre></details>
+        <p><span class="field-label">Notes:</span> Case-insensitive search; empty results return empty array.</p>
+      </div>
 
-    <!-- CRUD SUITE -->
-    <div class="card">
-      <h2>📦 Suite 2 — Product CRUD</h2>
-      <p><strong>Endpoints:</strong></p>
-      <ul>
-        <li><code>GET /api/v1/products</code></li>
-        <li><code>POST /api/v1/products</code></li>
-        <li><code>PUT /api/v1/products/:id</code></li>
-        <li><code>DELETE /api/v1/products/:id</code></li>
-      </ul>
+    </details>
 
-      <h3>Main Tests</h3>
-      <ul>
-        <li>Create product → 201 Created</li>
-        <li>Fetch product list → array of objects</li>
-        <li>Update product → 200 OK</li>
-        <li>Delete product → 204 No Content</li>
-      </ul>
+    <!-- POST Requests -->
+    <details class="method-post">
+      <summary>POST Requests</summary>
 
-      <details>
-        <summary>JSON Schema Validation Example</summary>
-        <pre><code>const schema = {
-  "type": "object",
-  "required": ["id", "title", "price"],
-  "properties": {
-      "id": { "type": "number" },
-      "title": { "type": "string" },
-      "price": { "type": "number" }
-  }
-};
+      <div class="case">
+        <p class="case-title">1. User Registration</p>
+        <p><span class="field-label">Method:</span> POST</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/auth/register</p>
+        <p><span class="field-label">Headers:</span> Content-Type: application/json</p>
+        <p><span class="field-label">Body:</span> {"name":"Eve","email":"eve@example.com","password":"Pass123!"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 201 Created</p>
+        <details><summary>Response JSON</summary><pre>{"id":55,"name":"Eve","email":"eve@example.com"}</pre></details>
+        <p><span class="field-label">Notes:</span> Email must be unique; missing fields return 400 Bad Request.</p>
+      </div>
 
-pm.test("Valid product schema", function () {
-  pm.response.to.have.jsonSchema(schema);
-});
-</code></pre>
-      </details>
+      <div class="case">
+        <p class="case-title">2. User Login</p>
+        <p><span class="field-label">Method:</span> POST</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/auth/login</p>
+        <p><span class="field-label">Body:</span> {"email":"alice@example.com","password":"Pass123!"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"token":"abcdef123456","expires_in":3600}</pre></details>
+        <p><span class="field-label">Notes:</span> Invalid password -> 401 Unauthorized.</p>
+      </div>
 
-      <p><span class="placeholder">[Postman Collection export coming soon]</span></p>
-    </div>
+      <div class="case">
+        <p class="case-title">3. Create Product</p>
+        <p><span class="field-label">Method:</span> POST</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/products</p>
+        <p><span class="field-label">Body:</span> {"name":"Gaming Mouse","price":49.99}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 201 Created</p>
+        <details><summary>Response JSON</summary><pre>{"id":201,"name":"Gaming Mouse","price":49.99}</pre></details>
+        <p><span class="field-label">Notes:</span> Price must be numeric; missing fields -> 400 Bad Request.</p>
+      </div>
 
-    <!-- ERROR HANDLING SUITE -->
-    <div class="card">
-      <h2>⚠️ Suite 3 — Error Handling & Edge Cases</h2>
-      <p><strong>Endpoints tested:</strong> all core endpoints</p>
+      <div class="case">
+        <p class="case-title">4. Submit Feedback</p>
+        <p><span class="field-label">Method:</span> POST</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/feedback</p>
+        <p><span class="field-label">Body:</span> {"userId":1,"message":"Great app!"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 201 Created</p>
+        <details><summary>Response JSON</summary><pre>{"id":301,"status":"Received"}</pre></details>
+        <p><span class="field-label">Notes:</span> Empty message -> 400 Bad Request.</p>
+      </div>
 
-      <h3>Test Scenarios</h3>
-      <ul>
-        <li>Incorrect HTTP method → 405 Method Not Allowed</li>
-        <li>Empty payload → 400 Bad Request</li>
-        <li>Rate limiting → 429 Too Many Requests</li>
-        <li>Server error simulation → 500 Internal Server Error</li>
-      </ul>
+      <div class="case">
+        <p class="case-title">5. Password Reset</p>
+        <p><span class="field-label">Method:</span> POST</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/auth/reset-password</p>
+        <p><span class="field-label">Body:</span> {"email":"alice@example.com"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"message":"Password reset email sent"}</pre></details>
+        <p><span class="field-label">Notes:</span> Invalid email -> 404 Not Found.</p>
+      </div>
 
-      <details>
-        <summary>Postman Negative Test Example</summary>
-        <pre><code>pm.test("Should return an error", () => {
-  pm.expect(pm.response.code).to.be.oneOf([400, 404, 422, 500]);
-});
-</code></pre>
-      </details>
+    </details>
 
-      <p><span class="placeholder">[Error-handling screenshots coming soon]</span></p>
-    </div>
+    <!-- PUT Requests -->
+    <details class="method-put">
+      <summary>PUT Requests</summary>
+
+      <div class="case">
+        <p class="case-title">1. Update User Email</p>
+        <p><span class="field-label">Method:</span> PUT</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users/42</p>
+        <p><span class="field-label">Body:</span> {"email":"charlie_new@example.com"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"id":42,"name":"Charlie","email":"charlie_new@example.com"}</pre></details>
+        <p><span class="field-label">Notes:</span> Email must be unique.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">2. Update Product Price</p>
+        <p><span class="field-label">Method:</span> PUT</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/products/101</p>
+        <p><span class="field-label">Body:</span> {"price":59.99}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"id":101,"name":"Wireless Mouse","price":59.99}</pre></details>
+        <p><span class="field-label">Notes:</span> Negative price -> 400 Bad Request.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">3. Change User Role</p>
+        <p><span class="field-label">Method:</span> PUT</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users/10</p>
+        <p><span class="field-label">Body:</span> {"role":"editor"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"id":10,"name":"Dana","role":"editor"}</pre></details>
+        <p><span class="field-label">Notes:</span> Invalid role -> 400 Bad Request.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">4. Update Product Stock</p>
+        <p><span class="field-label">Method:</span> PUT</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/products/102</p>
+        <p><span class="field-label">Body:</span> {"stock":25}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"id":102,"name":"USB Keyboard","stock":25}</pre></details>
+        <p><span class="field-label">Notes:</span> Stock cannot be negative.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">5. Update User Profile</p>
+        <p><span class="field-label">Method:</span> PUT</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users/1</p>
+        <p><span class="field-label">Body:</span> {"name":"Alice Johnson","email":"alice_j@example.com"}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 200 OK</p>
+        <details><summary>Response JSON</summary><pre>{"id":1,"name":"Alice Johnson","email":"alice_j@example.com"}</pre></details>
+        <p><span class="field-label">Notes:</span> Email must be valid format.</p>
+      </div>
+
+    </details>
+
+    <!-- DELETE Requests -->
+    <details class="method-delete">
+      <summary>DELETE Requests</summary>
+
+      <div class="case">
+        <p class="case-title">1. Delete User by ID</p>
+        <p><span class="field-label">Method:</span> DELETE</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/users/{user_id}</p>
+        <p><span class="field-label">Headers:</span> Authorization: Bearer &lt;valid_token&gt;</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 204 No Content, Body: Empty</p>
+        <p><span class="field-label">Notes:</span> Deleting non-existent user -> 404 Not Found; Missing token -> 401 Unauthorized.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">2. Delete Product by ID</p>
+        <p><span class="field-label">Method:</span> DELETE</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/products/{product_id}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 204 No Content</p>
+        <p><span class="field-label">Notes:</span> Non-existent product -> 404 Not Found.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">3. Delete Feedback</p>
+        <p><span class="field-label">Method:</span> DELETE</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/feedback/{feedback_id}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 204 No Content</p>
+        <p><span class="field-label">Notes:</span> Only the user who submitted can delete feedback.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">4. Delete Session</p>
+        <p><span class="field-label">Method:</span> DELETE</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/sessions/{session_id}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 204 No Content</p>
+        <p><span class="field-label">Notes:</span> Invalid session -> 404 Not Found.</p>
+      </div>
+
+      <div class="case">
+        <p class="case-title">5. Delete Notification</p>
+        <p><span class="field-label">Method:</span> DELETE</p>
+        <p><span class="field-label">URL:</span> https://api.example.com/notifications/{notification_id}</p>
+        <p><span class="field-label">Expected Response:</span> HTTP 204 No Content</p>
+        <p><span class="field-label">Notes:</span> Notifications not found -> 404 Not Found.</p>
+      </div>
+
+    </details>
 
   </section>
 

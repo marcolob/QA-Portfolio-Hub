@@ -3,46 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QA Checklists - Marco Lob</title>
+<title>QA Checklists - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../styles.css">
+<style>
+/* Card checklist specifiche */
+.checklist-card details {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 1.5rem;
+  color: #f2f2f2;
+}
+
+.checklist-card summary {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  color: #6ab0f3;
+}
+
+.checklist-card pre, .checklist-card ol, .checklist-card ul {
+  margin: 10px 0 0 0;
+  padding-left: 1.2rem;
+}
+
+.checklist-card .field-label {
+  color: #f2f2f2;
+  font-weight: bold;
+}
+
+.checklist-card .field-value {
+  color: #bdbdbd;
+}
+
+.back-home { display: inline-block; margin-top: 2rem; text-align: center; }
+</style>
 </head>
 <body>
 
 <div class="container">
 
-  <section class="hero">
+  <div class="hero fade-in">
     <h1>📋 QA Checklists</h1>
-    <p>Comprehensive checklists to ensure quality, coverage, and compliance for all Web & Mobile projects.</p>
-  </section>
+    <p>Interactive and realistic checklists for Sanity, Regression, and Smoke testing on Web & Mobile projects. Expand cards to see steps, expected results, and actual results.</p>
+  </div>
 
-  <section class="cards">
-    <h2>Pre-release</h2>
-    <ul>
-      <li>Smoke tests executed ✅</li>
-      <li>Critical bugs resolved ✅</li>
-      <li>API endpoints validated ✅</li>
-      <li>UI screens verified ✅</li>
-      <li>Accessibility checks done ✅</li>
-    </ul>
+  <section class="cards fade-in checklist-card">
 
-    <h2>Regression Suite</h2>
-    <ul>
-      <li>Login flows ✅</li>
-      <li>Dashboard widgets ✅</li>
-      <li>Android app login ⚠</li>
-      <li>API auth & CRUD ✅</li>
-    </ul>
+    <!-- Sanity / Pre-release -->
+    <details open>
+      <summary>🟢 Sanity / Pre-release Checklist</summary>
+      <ol>
+        <li><span class="field-label">Login/Logout:</span> 
+            <span class="field-value">Tested on Web Chrome & Mobile Android ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Dashboard:</span> 
+            <span class="field-value">Widgets load correctly, filters applied ✅ Passed</span>
+        </li>
+        <li><span class="field-label">API Endpoints:</span> 
+            <span class="field-value">GET /products < 2s, POST /orders success ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Forms Validation:</span> 
+            <span class="field-value">Empty email triggers error, password strength validated ✅ Passed</span>
+        </li>
+        <li><span class="field-label">UI Quick Check:</span> 
+            <span class="field-value">Buttons and icons render correctly ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Cross-browser Check:</span> 
+            <span class="field-value">Chrome ✅ Passed, Firefox ✅ Passed, Edge ❌ Minor layout glitch</span>
+        </li>
+      </ol>
+      <p><span class="field-label">Reported By:</span> <span class="field-value">Marco Lo Bianco</span></p>
+    </details>
 
-    <h2>Smoke Tests</h2>
-    <ul>
-      <li>Basic login/logout ✅</li>
-      <li>Dashboard loads ✅</li>
-      <li>API responds ✅</li>
-    </ul>
+    <!-- Regression -->
+    <details>
+      <summary>🟠 Regression Suite Checklist</summary>
+      <ol>
+        <li><span class="field-label">Login/Logout flows:</span> 
+            <span class="field-value">Web & Mobile, token persistence ✅ Passed</span>
+        </li>
+        <li><span class="field-label">User Management:</span> 
+            <span class="field-value">Create, edit, delete users ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Dashboard & Widgets:</span> 
+            <span class="field-value">Filtering and sorting correct ✅ Passed</span>
+        </li>
+        <li><span class="field-label">API CRUD operations:</span> 
+            <span class="field-value">Products, orders, auth endpoints ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Mobile App Tests:</span> 
+            <span class="field-value">Swipe, rotation, notifications ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Cross-browser & cross-device:</span> 
+            <span class="field-value">UI/UX consistent ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Security checks:</span> 
+            <span class="field-value">Token validation, session handling ✅ Passed</span>
+        </li>
+      </ol>
+      <p><span class="field-label">Reported By:</span> <span class="field-value">Marco Lo Bianco</span></p>
+    </details>
+
+    <!-- Smoke Tests -->
+    <details>
+      <summary>🔵 Smoke Tests Checklist</summary>
+      <ol>
+        <li><span class="field-label">Login with valid credentials:</span> 
+            <span class="field-value">Dashboard loads correctly ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Basic Navigation:</span> 
+            <span class="field-value">Main menu links clickable ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Critical API Endpoints:</span> 
+            <span class="field-value">GET /products, POST /orders ✅ Passed</span>
+        </li>
+        <li><span class="field-label">UI Controls:</span> 
+            <span class="field-value">Buttons and forms respond ✅ Passed</span>
+        </li>
+        <li><span class="field-label">Error Handling:</span> 
+            <span class="field-value">Invalid inputs show messages ❌ Minor validation bug</span>
+        </li>
+      </ol>
+      <p><span class="field-label">Reported By:</span> <span class="field-value">Marco Lo Bianco</span></p>
+    </details>
+
   </section>
 
   <section>
-    <a class="card" href="/index.html">⬅ Back to Home</a>
+    <a class="card back-home" href="/index.html">⬅ Back to Home</a>
   </section>
 
 </div>

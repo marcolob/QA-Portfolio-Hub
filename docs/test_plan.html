@@ -3,146 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QA Test Plans - Marco Lo Bianco</title>
-<link rel="stylesheet" href="../../styles.css"> <!-- percorso corretto -->
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f6f8;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        max-width: 1000px;
-        margin: 2rem auto;
-        padding: 1rem;
-    }
-    h1, h2, h3 {
-        color: #2c3e50;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    .plan-section {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .plan-section h3 {
-        margin-top: 0;
-        color: #34495e;
-    }
-    .plan-section ul {
-        margin: 0.5rem 0 0 1rem;
-    }
-</style>
+<title>Test Plans - Marco Lo Bianco</title>
+<link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
 <div class="container">
-    <h1>QA Test Plans</h1>
 
-    <!-- Test Plan 1 -->
-    <div class="plan-section">
-        <h2>Test Plan 1 – Web Application Login Module</h2>
-        <h3>Objective:</h3>
-        <p>Verify the login functionality works correctly with valid and invalid credentials.</p>
-        <h3>Scope:</h3>
-        <ul>
-            <li>Login page validation</li>
-            <li>Username/password correct and incorrect scenarios</li>
-            <li>Remember Me functionality</li>
-        </ul>
-        <h3>Test Cases Included:</h3>
-        <ul>
-            <li>TC001 – Valid Login</li>
-            <li>TC002 – Invalid Password</li>
-            <li>TC003 – Empty Fields</li>
-            <li>TC004 – Remember Me functionality</li>
-        </ul>
-        <h3>Environment:</h3>
-        <ul>
-            <li>Browser: Chrome / Firefox</li>
-            <li>OS: Windows 10</li>
-            <li>Test Data: 5 valid accounts, 3 invalid accounts</li>
-        </ul>
+  <div class="hero fade-in">
+    <h1>📝 Test Plans</h1>
+    <p>Structured test plans for Web & Mobile projects including objectives, scope, strategy, and regression coverage.</p>
+  </div>
+
+  <section class="cards fade-in">
+
+    <!-- Web Project Test Plan -->
+    <div class="card">
+      <h2>Web Project Test Plan</h2>
+
+      <h3>Objectives</h3>
+      <ul>
+        <li>Ensure functionality works as per requirements</li>
+        <li>Identify UI/UX issues early</li>
+        <li>Validate API integration and workflows</li>
+      </ul>
+
+      <h3>Scope</h3>
+      <ul>
+        <li>Login & authentication</li>
+        <li>Dashboard & widgets</li>
+        <li>Forms & CRUD operations</li>
+        <li>Cross-browser compatibility</li>
+      </ul>
+
+      <h3>Regression & Smoke Testing</h3>
+      <ul>
+        <li>Run smoke tests on each build</li>
+        <li>Regression on critical modules before releases</li>
+      </ul>
     </div>
 
-    <!-- Test Plan 2 -->
-    <div class="plan-section">
-        <h2>Test Plan 2 – Web Dashboard</h2>
-        <h3>Objective:</h3>
-        <p>Verify dashboard widgets load correctly and menu navigation works.</p>
-        <h3>Scope:</h3>
-        <ul>
-            <li>Widget data rendering</li>
-            <li>Navigation menu links</li>
-        </ul>
-        <h3>Test Cases Included:</h3>
-        <ul>
-            <li>TC005 – Widget Loading</li>
-            <li>TC006 – Navigation Menu</li>
-        </ul>
-        <h3>Environment:</h3>
-        <ul>
-            <li>Browser: Chrome / Firefox</li>
-            <li>OS: Windows 10</li>
-        </ul>
+    <!-- Mobile Project Test Plan -->
+    <div class="card">
+      <h2>Mobile Project Test Plan</h2>
+
+      <h3>Objectives</h3>
+      <ul>
+        <li>Ensure app stability across devices</li>
+        <li>Validate touch gestures and navigation</li>
+        <li>Test offline behavior and notifications</li>
+      </ul>
+
+      <h3>Scope</h3>
+      <ul>
+        <li>Login & authentication</li>
+        <li>Main screens and navigation</li>
+        <li>Push notifications & offline mode</li>
+        <li>Performance & battery usage</li>
+      </ul>
+
+      <h3>Regression & Smoke Testing</h3>
+      <ul>
+        <li>Smoke tests after each update</li>
+        <li>Regression tests on all critical user flows</li>
+      </ul>
     </div>
 
-    <!-- Test Plan 3 -->
-    <div class="plan-section">
-        <h2>Test Plan 3 – Android Application Login Module</h2>
-        <h3>Objective:</h3>
-        <p>Ensure login works on Android devices and validation rules are correct.</p>
-        <h3>Scope:</h3>
-        <ul>
-            <li>Valid/invalid credentials</li>
-            <li>Password masking</li>
-            <li>Remember Me persistence</li>
-        </ul>
-        <h3>Test Cases Included:</h3>
-        <ul>
-            <li>TC007 – Valid Login</li>
-            <li>TC008 – Invalid Email Format</li>
-            <li>TC009 – Password Masking</li>
-            <li>TC010 – Remember Me</li>
-        </ul>
-        <h3>Environment:</h3>
-        <ul>
-            <li>Device: Pixel 5 / Samsung Galaxy S21</li>
-            <li>OS: Android 12</li>
-            <li>App Version: 1.0.0</li>
-        </ul>
-    </div>
+  </section>
 
-    <!-- Test Plan 4 – Example API -->
-    <div class="plan-section">
-        <h2>Test Plan 4 – API Testing</h2>
-        <h3>Objective:</h3>
-        <p>Validate API endpoints with JSON schema and ensure correct response codes.</p>
-        <h3>Scope:</h3>
-        <ul>
-            <li>GET /users</li>
-            <li>POST /login</li>
-            <li>PUT /update-profile</li>
-        </ul>
-        <h3>Test Cases Included:</h3>
-        <ul>
-            <li>API001 – GET Users Validation</li>
-            <li>API002 – POST Login Success</li>
-            <li>API003 – PUT Update Profile</li>
-        </ul>
-        <h3>Environment:</h3>
-        <ul>
-            <li>Postman collection used</li>
-            <li>Local dev server and staging server</li>
-        </ul>
-    </div>
+  <section>
+    <a class="card back-home" href="/index.html">⬅ Back to Home</a>
+  </section>
 
 </div>
+
 </body>
 </html>
