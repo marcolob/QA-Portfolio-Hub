@@ -3,30 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>API Testing - Marco Lob</title>
+<title>API Tests</title>
 <link rel="stylesheet" href="../styles.css">
+<style>
+  .api-section .card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  details {
+    background: #1e1e1e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    overflow-x: auto;
+  }
+
+  details[open] pre {
+    max-height: 600px;   /* altezza massima espandibile */
+    overflow-y: auto;     /* scrollbar verticale solo se serve */
+  }
+
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+  }
+
+  pre {
+    margin: 10px 0 0 0;
+    overflow-x: auto;
+    background: transparent;
+    padding: 0;
+    color: #fff;
+    white-space: pre-wrap;   /* wrap automatico */
+    word-break: break-word;
+  }
+
+  .placeholder {
+    opacity: 0.6;
+    font-style: italic;
+  }
+</style>
 </head>
 <body>
 
 <div class="container">
 
-  <section class="hero">
-    <h1>⚡ API Testing</h1>
-    <p>RESTful API testing with Postman, JSON Schema validation, automated scripts, and advanced scenario coverage for Web & Mobile.</p>
-  </section>
+  <div class="hero fade-in">
+    <h1>🔗 API Testing</h1>
+    <p>
+      API testing performed using <strong>Postman</strong>. Includes functional & negative tests, 
+      JSON Schema Validation, authentication workflows and edge-case handling.
+      <br>
+      <span class="placeholder">Screenshots & Postman Collection: Working on…</span>
+    </p>
+  </div>
 
-  <section class="cards">
-    <h2>Recent API Tests</h2>
-    <ul>
-      <li>User Authentication – Web & Mobile APIs ✅</li>
-      <li>Data Validation – GET / POST / PUT ✅</li>
-      <li>Error Handling & Response Codes ✅</li>
-      <li>Performance & Stress Testing ⚠</li>
-    </ul>
-  </section>
+  <section class="cards fade-in api-section">
 
-  <section>
-    <a class="card" href="/index.html">⬅ Back to Home</a>
+    <!-- AUTH SUITE -->
+    <div class="card">
+      <h2>🔐 Suite 1 — User Authentication</h2>
+      <p><strong>Endpoints:</strong></p>
+      <ul>
+        <li><code>POST /api/v1/auth/login</code></li>
+        <li><code>POST /api/v1/auth/register</code></li>
+        <li><code>POST /api/v1/auth/refresh</code></li>
+      </ul>
+
+      <h3>Test Scenarios</h3>
+      <ul>
+        <li>Valid login → 200 OK + token</li>
+        <li>Invalid password → 401 Unauthorized</li>
+        <li>Missing fields → 400 Bad Request</li>
+        <li>Token refresh → returns new JWT token</li>
+      </ul>
+
+      <details>
+        <summary>Postman Test Script Example</summary>
+        <pre><code>// Validate login response
+pm.test("Status is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Token exists", function () {
+    pm.expect(pm.response.json()).to.have.property("token");
+});
+
+// Save token
+pm.collectionVariables.set("auth_token", pm.response.json().token);
+</code></pre>
+      </details>
+
+      <p><span class="placeholder">[Screenshot results coming soon]</span></p>
+    </div>
+
+    <!-- CRUD SUITE -->
+    <div class="card">
+      <h2>📦 Suite 2 — Product CRUD</h2>
+      <p><strong>Endpoints:</strong></p>
+      <ul>
+        <li><code>GET /api/v1/products</code></li>
+        <li><code>POST /api/v1/products</code></li>
+        <li><code>PUT /api/v1/products/:id</code></li>
+        <li><code>DELETE /api/v1/products/:id</code></li>
+      </ul>
+
+      <h3>Main Tests</h3>
+      <ul>
+        <li>Create product → 201 Created</li>
+        <li>Fetch product list → array of objects</li>
+        <li>Update product → 200 OK</li>
+        <li>Delete product → 204 No Content</li>
+      </ul>
+
+      <details>
+        <summary>JSON Schema Validation Example</summary>
+        <pre><code>const schema = {
+  "type": "object",
+  "required": ["id", "title", "price"],
+  "properties": {
+      "id": { "type": "number" },
+      "title": { "type": "string" },
+      "price": { "type": "number" }
+  }
+};
+
+pm.test("Valid product schema", function () {
+  pm.response.to.have.jsonSchema(schema);
+});
+</code></pre>
+      </details>
+
+      <p><span class="placeholder">[Postman Collection export coming soon]</span></p>
+    </div>
+
+    <!-- ERROR HANDLING SUITE -->
+    <div class="card">
+      <h2>⚠️ Suite 3 — Error Handling & Edge Cases</h2>
+      <p><strong>Endpoints tested:</strong> all core endpoints</p>
+
+      <h3>Test Scenarios</h3>
+      <ul>
+        <li>Incorrect HTTP method → 405 Method Not Allowed</li>
+        <li>Empty payload → 400 Bad Request</li>
+        <li>Rate limiting → 429 Too Many Requests</li>
+        <li>Server error simulation → 500 Internal Server Error</li>
+      </ul>
+
+      <details>
+        <summary>Postman Negative Test Example</summary>
+        <pre><code>pm.test("Should return an error", () => {
+  pm.expect(pm.response.code).to.be.oneOf([400, 404, 422, 500]);
+});
+</code></pre>
+      </details>
+
+      <p><span class="placeholder">[Error-handling screenshots coming soon]</span></p>
+    </div>
+
   </section>
 
 </div>
