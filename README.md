@@ -1,18 +1,20 @@
-# QA Manual Portfolio – Marco Lo Bianco
+# QA Manual & Automation Portfolio – Marco Lo Bianco
 
-A complete QA Manual testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
-This repository simulates a production-level QA workflow for both **web and mobile applications (Android)**.
+A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
+This repository simulates a production-level QA workflow for both **web and mobile applications**.
 
 ---
 
 ## 🚀 About Me
-I am a QA Manual automation engineer with hands-on manual experience in:
+I am a QA Manual & Automation engineer with hands-on experience in:
 
 - Functional & regression testing  
 - Test case design and execution  
-- Web & Android testing  
+- Web & Mobile testing  
 - API testing with Postman  
 - Exploratory testing  
+- Automation using Cypress and basic Playwright  
+- CI/CD with GitHub Actions and Jenkins  
 - Bug reporting with severity & priority  
 - Working in Agile/Scrum environments  
 
@@ -26,18 +28,21 @@ QA-Portfolio-Hub/
 ├── README.md
 ├── index.html
 ├── assets/
-│   └── ui_mockups/
+│ └── ui_mockups/
 ├── docs/
-│   ├── test_plan.md
-│   ├── manual_tests.md
-│   ├── api_tests.md
-│   ├── checklists.md
-│   └── test_matrix.csv
+│ ├── test_plan.md
+│ ├── manual_tests.md
+│ ├── api_tests.md
+│ ├── checklists.md
+│ └── test_matrix.csv
 ├── bug_reports/
 ├── reports/
-│   └── screenshots/
+│ └── screenshots/
 ├── scripts.js
 └── styles.css
+
+markdown
+Copia codice
 
 ---
 
@@ -48,10 +53,15 @@ Complete document describing scope, strategy, test types, environments, entry/ex
 
 ### ✔️ Manual Test Cases
 - Web application test cases  
-- Android mobile app test cases  
+- Mobile application test cases  
 - Positive, negative, edge scenarios  
 - Expected vs. Actual Results  
 - Regression coverage  
+
+### ✔️ Automation
+- Cypress test scripts  
+- Basic Playwright examples  
+- CI/CD integration examples  
 
 ### ✔️ API Tests (Postman)
 - Collection examples  
@@ -83,6 +93,9 @@ A complete Test Execution Report with PASS/FAIL summary and observations.
 ---
 
 ## 📬 Contact
-**Marco Lo Bianco – QA Manual Automation Engineer**  
-GitHub: https://github.com/marcolob  
-Email: m.lobianco@hotmail.it
+**Marco Lo Bianco – QA Manual & Automation Engineer**  
+GitHub: [https://github.com/marcolob](https://github.com/marcolob)  
+Email: m.lobianco@hotmail.it  
+LinkedIn: [https://www.linkedin.com/in/marco-lo-bianco-869311b1](https://www.linkedin.com/in/marco-lo-bianco-869311b1)  
+
+Open to collaboration, learning opportunities, and QA Automation roles.
