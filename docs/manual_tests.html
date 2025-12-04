@@ -3,76 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>manual_tests</title>
+<title>Manual Tests</title>
 <link rel="stylesheet" href="../styles.css">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .test-section {
+        margin-bottom: 2rem;
+    }
+    .test-case {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        padding: 1rem 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.2s;
+    }
+    .test-case:hover {
+        transform: translateY(-2px);
+    }
+    .test-case h4 {
+        margin-top: 0;
+        color: #34495e;
+    }
+    .steps, .expected, .actual, .status {
+        margin: 0.5rem 0;
+        padding-left: 1rem;
+    }
+    .status span {
+        font-weight: bold;
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+    }
+    .status.pass span {
+        background-color: #2ecc71;
+        color: #fff;
+    }
+    .status.fail span {
+        background-color: #e74c3c;
+        color: #fff;
+    }
+    .status.tbd span {
+        background-color: #f1c40f;
+        color: #fff;
+    }
+</style>
 </head>
 <body>
 <div class="container">
+    <h1>Manual Testing Portfolio</h1>
 
-        param($match)
-        $level = $match.Groups[1].Value.Length
-        $text = $match.Groups[2].Value
-        "<h$level>$text</h$level>"
-    
+    <!-- Web Application Section -->
+    <div class="test-section">
+        <h2>Web Application â€“ Login Module</h2>
 
-## Web Application – Login Module
-### TC001 – Valid Login
-Steps:
-1. Open web application
-2. Navigate to Login page
-3. Enter valid username/password
-4. Click "Login"
+        <div class="test-case">
+            <h4>TC001 â€“ Valid Login</h4>
+            <div class="steps"><strong>Steps:</strong>
+                <ol>
+                    <li>Open web application</li>
+                    <li>Navigate to Login page</li>
+                    <li>Enter valid username/password</li>
+                    <li>Click "Login"</li>
+                </ol>
+            </div>
+            <div class="expected"><strong>Expected Result:</strong> User redirected to dashboard</div>
+            <div class="actual"><strong>Actual Result:</strong> [To be filled]</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
 
-Expected Result: User redirected to dashboard  
-Actual Result: [To be filled]  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC002 â€“ Invalid Password</h4>
+            <div class="steps"><strong>Steps:</strong>
+                <ol>
+                    <li>Open Login page</li>
+                    <li>Enter valid username and invalid password</li>
+                    <li>Click "Login"</li>
+                </ol>
+            </div>
+            <div class="expected"><strong>Expected Result:</strong> Error message displayed</div>
+            <div class="actual"><strong>Actual Result:</strong> [To be filled]</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
 
-### TC002 – Invalid Password
-Steps:
-1. Open Login page
-2. Enter valid username and invalid password
-3. Click "Login"
+        <div class="test-case">
+            <h4>TC003 â€“ Empty Fields</h4>
+            <div class="steps"><strong>Steps:</strong> Leave username/password blank, click login</div>
+            <div class="expected"><strong>Expected Result:</strong> Validation error</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
+    </div>
 
-Expected Result: Error message displayed  
-Actual Result: [To be filled]  
-Status: [PASS/FAIL]
+    <!-- Web Dashboard Section -->
+    <div class="test-section">
+        <h2>Web Application â€“ Dashboard</h2>
 
-### TC003 – Empty Fields
-Steps: Leave username/password blank, click login  
-Expected Result: Validation error  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC004 â€“ Widget Loading</h4>
+            <div class="steps"><strong>Steps:</strong> Open dashboard after login</div>
+            <div class="expected"><strong>Expected Result:</strong> All widgets loaded correctly</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
 
-## Web Application – Dashboard
-### TC004 – Widget Loading
-Steps: Open dashboard after login  
-Expected Result: All widgets loaded correctly  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC005 â€“ Navigation Menu</h4>
+            <div class="steps"><strong>Steps:</strong> Click each menu item</div>
+            <div class="expected"><strong>Expected Result:</strong> Correct page loads</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
+    </div>
 
-### TC005 – Navigation Menu
-Steps: Click each menu item  
-Expected Result: Correct page loads  
-Status: [PASS/FAIL]
+    <!-- Android App Section -->
+    <div class="test-section">
+        <h2>Android Application â€“ Login Module</h2>
 
-## Android Application – Login Module
-### TC006 – Valid Login
-Steps: Launch app, enter valid credentials, click login  
-Expected Result: User navigates to main screen  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC006 â€“ Valid Login</h4>
+            <div class="steps"><strong>Steps:</strong> Launch app, enter valid credentials, click login</div>
+            <div class="expected"><strong>Expected Result:</strong> User navigates to main screen</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
 
-### TC007 – Invalid Email Format
-Steps: Enter invalid email  
-Expected Result: Validation error  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC007 â€“ Invalid Email Format</h4>
+            <div class="steps"><strong>Steps:</strong> Enter invalid email</div>
+            <div class="expected"><strong>Expected Result:</strong> Validation error</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
 
-### TC008 – Password Masking
-Steps: Type password  
-Expected Result: Characters masked  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC008 â€“ Password Masking</h4>
+            <div class="steps"><strong>Steps:</strong> Type password</div>
+            <div class="expected"><strong>Expected Result:</strong> Characters masked</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
 
-### TC009 – Remember Me
-Steps: Check “Remember Me”, login, close app, reopen  
-Expected Result: User remains logged in  
-Status: [PASS/FAIL]
+        <div class="test-case">
+            <h4>TC009 â€“ Remember Me</h4>
+            <div class="steps"><strong>Steps:</strong> Check "Remember Me", login, close app, reopen</div>
+            <div class="expected"><strong>Expected Result:</strong> User remains logged in</div>
+            <div class="status tbd"><strong>Status:</strong> <span>TBD</span></div>
+        </div>
+    </div>
 
 </div>
 </body>
