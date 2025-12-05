@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Usability Testing - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../../styles.css">
+<style>
+  .progress-bar { background: #eee; border-radius: 5px; height: 12px; margin-top: 5px; }
+  .progress { height: 12px; border-radius: 5px; background: #ff9800; }
+  .tooltip { position: relative; display: inline-block; cursor: pointer; }
+  .tooltip .tooltiptext {
+    visibility: hidden; width: 180px; background-color: #333; color: #fff; text-align: center;
+    border-radius: 5px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%;
+    margin-left: -90px; opacity: 0; transition: opacity 0.3s;
+  }
+  .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+</style>
 </head>
 <body>
 <div class="container">
@@ -22,16 +33,26 @@
         <li>WCAG compliance check</li>
         <li>Expected: Full accessibility</li>
         <li>Actual: ✅ Passed</li>
+        <li>Tools: Axe, screen readers</li>
+        <li class="tooltip">Impact: Ensures inclusivity and legal compliance
+          <span class="tooltiptext">Accessible apps improve UX for all users</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:100%"></div></div>
     </div>
 
     <div class="card">
       <h3>Navigation Flow</h3>
       <ul>
         <li>Evaluate task completion paths</li>
-        <li>Expected: Intuitive</li>
+        <li>Expected: Intuitive navigation</li>
         <li>Actual: ⚠ Some confusing elements</li>
+        <li>Tools: User testing, flow analysis</li>
+        <li class="tooltip">Impact: Optimizing flow reduces drop-offs
+          <span class="tooltiptext">Minor UI tweaks can increase task completion rate</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:88%"></div></div>
     </div>
 
     <div class="card">
@@ -40,7 +61,12 @@
         <li>Survey evaluation</li>
         <li>Expected: High satisfaction</li>
         <li>Actual: ✔ Good feedback</li>
+        <li>Tools: Google Forms, interviews</li>
+        <li class="tooltip">Impact: Positive UX drives retention
+          <span class="tooltiptext">Satisfied users are more likely to convert and recommend</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:92%"></div></div>
     </div>
 
   </section>

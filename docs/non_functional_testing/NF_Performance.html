@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Performance Testing - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../../styles.css">
+<style>
+  .progress-bar { background: #eee; border-radius: 5px; height: 12px; margin-top: 5px; }
+  .progress { height: 12px; border-radius: 5px; background: #ffeb3b; } /* giallo */
+  .tooltip { position: relative; display: inline-block; cursor: pointer; }
+  .tooltip .tooltiptext {
+    visibility: hidden; width: 180px; background-color: #333; color: #fff; text-align: center;
+    border-radius: 5px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%;
+    margin-left: -90px; opacity: 0; transition: opacity 0.3s;
+  }
+  .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+</style>
 </head>
 <body>
 <div class="container">
@@ -19,28 +30,43 @@
     <div class="card">
       <h3>Load Testing</h3>
       <ul>
-        <li>Scenario: Simulate expected user load</li>
-        <li>Expected Result: Handles peak load efficiently</li>
-        <li>Actual Result: ✅ Passed</li>
+        <li>Scenario: Simulate expected user load (50-100 concurrent users)</li>
+        <li>Expected: Handles peak load efficiently</li>
+        <li>Actual: ✅ Passed</li>
+        <li>Tools: JMeter, monitoring CPU/Memory</li>
+        <li class="tooltip">Impact: Ensures users don’t experience slowdowns
+          <span class="tooltiptext">Critical for user retention during peak traffic</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:100%"></div></div>
     </div>
 
     <div class="card">
       <h3>Stress Testing</h3>
       <ul>
-        <li>Scenario: Apply extreme conditions</li>
-        <li>Expected Result: Graceful degradation</li>
-        <li>Actual Result: ⚠ Minor slowdowns</li>
+        <li>Scenario: Apply extreme load (200+ users)</li>
+        <li>Expected: Graceful degradation</li>
+        <li>Actual: ⚠ Minor slowdowns</li>
+        <li>Tools: LoadRunner, server logs</li>
+        <li class="tooltip">Impact: Identifies potential bottlenecks
+          <span class="tooltiptext">Helps prioritize optimizations for critical endpoints</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
     </div>
 
     <div class="card">
       <h3>Response Time</h3>
       <ul>
-        <li>Scenario: Measure response metrics</li>
-        <li>Expected Result: SLA compliant</li>
-        <li>Actual Result: ✅ Passed</li>
+        <li>Scenario: Measure API & page response times</li>
+        <li>Expected: SLA <500ms</li>
+        <li>Actual: ✅ 420ms</li>
+        <li>Tools: Lighthouse, Postman</li>
+        <li class="tooltip">Impact: Faster responses improve conversion
+          <span class="tooltiptext">Users stay engaged, reduces bounce rate</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:84%"></div></div>
     </div>
 
   </section>

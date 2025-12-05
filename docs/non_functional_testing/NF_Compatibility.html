@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compatibility Testing - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../../styles.css">
+<style>
+  .progress-bar { background: #eee; border-radius: 5px; height: 12px; margin-top: 5px; }
+  .progress { height: 12px; border-radius: 5px; background: #4caf50; }
+  .tooltip { position: relative; display: inline-block; cursor: pointer; }
+  .tooltip .tooltiptext {
+    visibility: hidden; width: 180px; background-color: #333; color: #fff; text-align: center;
+    border-radius: 5px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%;
+    margin-left: -90px; opacity: 0; transition: opacity 0.3s;
+  }
+  .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+</style>
 </head>
 <body>
 <div class="container">
@@ -22,7 +33,12 @@
         <li>Chrome / Firefox / Edge / Safari</li>
         <li>Expected: Uniform UX</li>
         <li>Actual: ✅ Passed</li>
+        <li>Tools: BrowserStack, DevTools</li>
+        <li class="tooltip">Impact on business: Consistent user experience increases engagement
+          <span class="tooltiptext">Uniform rendering avoids bounce and conversion issues</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:100%"></div></div>
     </div>
 
     <div class="card">
@@ -31,7 +47,12 @@
         <li>Desktop / Tablet / Mobile</li>
         <li>Expected: Full support</li>
         <li>Actual: ⚠ Minor mobile glitch</li>
+        <li>Tools: Real device testing</li>
+        <li class="tooltip">Impact: Minor layout misalignment on Android
+          <span class="tooltiptext">Does not affect key user flows, but noted for improvement</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:92%"></div></div>
     </div>
 
     <div class="card">
@@ -40,7 +61,12 @@
         <li>Responsive design verification</li>
         <li>Expected: Works on all sizes</li>
         <li>Actual: ✔ Passed</li>
+        <li>Tools: Chrome DevTools, media queries</li>
+        <li class="tooltip">Impact: Full responsiveness ensures mobile & desktop users can convert
+          <span class="tooltiptext">Improves usability and retention</span>
+        </li>
       </ul>
+      <div class="progress-bar"><div class="progress" style="width:100%"></div></div>
     </div>
 
   </section>
