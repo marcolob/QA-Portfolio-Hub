@@ -1,11 +1,9 @@
-## Hi there 👋
-
 # QA Manual & Automation Portfolio – Marco Lo Bianco
 
 [![Live Preview](https://img.shields.io/badge/Live-Preview-blue?style=flat-square)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
-This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and a **Cypress iGaming Demo** project.
+This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and **two Cypress automation projects**.
 
 ---
 
@@ -62,8 +60,9 @@ QA-Portfolio-Hub/
 ├── bug_reports/
 ├── reports/
 ├── screenshots/
-└── cypress-igaming-demo/
-
+└── cypress/
+    ├── cypress-igaming-demo/
+    └── cypress-e2e-automation-framework/
 
 ---
 
@@ -80,9 +79,15 @@ Complete document describing scope, strategy, test types, environments, entry/ex
 - Regression coverage  
 
 ### ✔️ Automation
-- **Cypress iGaming Demo**: End-to-end automation for gaming features, including CI/CD workflow.  
-- Cypress test scripts for web applications  
-- Basic Playwright examples  
+- **Cypress iGaming Demo**:  
+  End-to-end automation for gaming features, including CI/CD workflow.  
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge)](https://github.com/marcolob/cypress-igaming-demo)  
+
+- **Cypress E2E Automation Framework**:  
+  Full-stack web application automation framework with structured test suites and CI/CD integration.  
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge)](https://github.com/marcolob/cypress-e2e-automation-framework)  
+
+- Basic Playwright examples for Web & Mobile testing  
 - CI/CD integration examples  
 
 ### ✔️ API Tests (Postman)
