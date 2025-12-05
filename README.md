@@ -1,3 +1,5 @@
+## Hi there 👋
+
 # QA Manual & Automation Portfolio – Marco Lo Bianco
 
 [![Live Preview](https://img.shields.io/badge/Live-Preview-blue?style=flat-square)](https://marcolob.github.io/QA-Portfolio-Hub/)
@@ -62,8 +64,6 @@ QA-Portfolio-Hub/
 ├── screenshots/
 └── cypress-igaming-demo/
 
-markdown
-Copia codice
 
 ---
 
@@ -132,4 +132,4 @@ GitHub: [https://github.com/marcolob](https://github.com/marcolob)
 Email: m.lobianco@hotmail.it  
 LinkedIn: [https://www.linkedin.com/in/marco-lo-bianco-869311b1](https://www.linkedin.com/in/marco-lo-bianco-869311b1)  
 
-Open to collaboration, learning opportunities, and QA Automation roles.
+Open to collaboration, learning opportunities, and QA engineer roles.
