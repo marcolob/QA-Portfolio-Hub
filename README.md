@@ -112,14 +112,14 @@ Each bug includes:
 - Smoke checklist  
 
 ### ✔️ Functional Testing (Updated)
-- **Index**: [FT Index](docs/functional_testing/FT_index.html) – Overview of all functional testing documents  
-- **Bug Reports**: [FT Bug Reports](docs/functional_testing/FT_Bug_Reports.html) – Detailed bug reports with steps, severity, priority, TestRail/Jira links  
-- **Checklists**: [FT Checklists](docs/functional_testing/FT_Checklists.html) – Pre-release, regression, smoke test checklists  
-- **Dashboard**: [FT Dashboard](docs/functional_testing/FT_Dashboard.html) – Summary of execution metrics, bug status, progress bars  
-- **Test Cases**: [FT Test Cases](docs/functional_testing/FT_Test_Cases.html) – Functional test cases for Web & Mobile  
+- **Index**: [FT Index](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_index.html) – Overview of all functional testing documents  
+- **Bug Reports**: [FT Bug Reports](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Bug_Reports.html) – Detailed bug reports with steps, severity, priority, TestRail/Jira links  
+- **Checklists**: [FT Checklists](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Checklists.html) – Pre-release, regression, smoke test checklists  
+- **Dashboard**: [FT Dashboard]([docs/functional_testing/FT_Dashboard.html](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Dashboard.html)) – Summary of execution metrics, bug status, progress bars  
+- **Test Cases**: [FT Test Cases]([docs/functional_testing/FT_Test_Cases.html](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Test_Cases.html)) – Functional test cases for Web & Mobile  
 
 ### ✔️ Non-Functional Testing
-- **Index**: [NF Index](docs/non_functional_testing/NF_index.html) – Overview of non-functional testing  
+- **Index**: [NF Index]([docs/non_functional_testing/NF_index.html](https://marcolob.github.io/QA-Portfolio-Hub/docs/non_functional_testing/NF_index.html)) – Overview of non-functional testing  
 - Performance, Usability, Compatibility tests with detailed observations  
 - Execution reports and risk assessment  
 
