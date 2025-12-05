@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Functional Testing - Bug Reports</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<div class="container">
+
+  <div class="hero fade-in">
+    <h1>🐞 Functional Bug Reports</h1>
+    <p>Enterprise-style bug reports with replicable steps, environment, priority, and TestRail / Jira links.</p>
+  </div>
+
+  <section class="cards fade-in">
+    <div class="card">
+      <h3>Mobile App – Login Token Validation</h3>
+      <ul>
+        <li><span class="field">Summary:</span> Backend does not correctly validate token on mobile login</li>
+        <li><span class="field">Steps to Replicate:</span>
+          <ol>
+            <li>Install authorized mobile app</li>
+            <li>Open login screen</li>
+            <li>Enter valid credentials</li>
+            <li>Monitor backend token response</li>
+            <li>Verify user session</li>
+          </ol>
+        </li>
+        <li><span class="field">Expected Result:</span> Backend creates session and login completes</li>
+        <li><span class="field">Actual Result:</span> Token generated but session not created</li>
+        <li><span class="field">Priority:</span> 🟠 Medium</li>
+        <li><span class="field">Severity:</span> Major</li>
+        <li><span class="field">Status:</span> Selected for Development</li>
+        <li><span class="field">Reported By:</span> Marco Lo Bianco</li>
+        <li><span class="field">TestRail:</span> <a href="#">TR-101</a></li>
+        <li><span class="field">Jira:</span> <a href="#">JIRA-401</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Web – Dashboard Widget Loading</h3>
+      <ul>
+        <li><span class="field">Summary:</span> Some widgets fail to load after login</li>
+        <li><span class="field">Steps to Replicate:</span>
+          <ol>
+            <li>Login with valid user</li>
+            <li>Open main dashboard</li>
+            <li>Check widget loading</li>
+          </ol>
+        </li>
+        <li><span class="field">Expected Result:</span> All widgets load correctly</li>
+        <li><span class="field">Actual Result:</span> Widgets X and Y do not appear</li>
+        <li><span class="field">Priority:</span> 🔴 High</li>
+        <li><span class="field">Severity:</span> Critical</li>
+        <li><span class="field">Status:</span> Open</li>
+        <li><span class="field">Reported By:</span> Marco Lo Bianco</li>
+        <li><span class="field">TestRail:</span> <a href="#">TR-102</a></li>
+        <li><span class="field">Jira:</span> <a href="#">JIRA-402</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <a href="FT_index.html" class="back-home">← Back to Functional Index</a>
+</div>
+</body>
+</html>

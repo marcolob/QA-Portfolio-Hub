@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Functional Testing - Dashboard</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  .progress-bar {
+    height: 20px;
+    border-radius: 10px;
+    background: #333;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .progress {
+    height: 100%;
+    border-radius: 10px;
+    background: #ff9800; /* colore aggiornato */
+    text-align: right;
+    padding-right: 0.5rem;
+    color: #0f0f0f;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero fade-in">
+    <h1>📊 Functional Testing Dashboard</h1>
+    <p>Overview of test execution metrics and bug status.</p>
+  </div>
+
+  <section class="cards fade-in">
+
+    <!-- Execution Summary -->
+    <div class="card">
+      <h3>Execution Summary</h3>
+      <ul>
+        <li>Total Test Cases: 50</li>
+        <li>Passed: 42</li>
+        <li>Failed: 8</li>
+        <li>Pass Rate:</li>
+      </ul>
+      <div class="progress-bar">
+        <div class="progress" style="width: 84%;">84%</div>
+      </div>
+    </div>
+
+    <!-- Test Cases by Platform -->
+    <div class="card">
+      <h3>Test Cases by Platform</h3>
+      <ul>
+        <li>Web: 30 (Passed: 26, Failed: 4)</li>
+        <li>Mobile: 20 (Passed: 16, Failed: 4)</li>
+      </ul>
+    </div>
+
+    <!-- Bug Status Overview -->
+    <div class="card">
+      <h3>Bug Status Overview</h3>
+      <ul>
+        <li>Open: 5</li>
+        <li>In Progress: 2</li>
+        <li>Resolved: 10</li>
+        <li>Critical: 2</li>
+        <li>Major: 5</li>
+        <li>Minor: 10</li>
+      </ul>
+    </div>
+
+    <!-- Upcoming / Pending Tasks -->
+    <div class="card">
+      <h3>Upcoming Tasks</h3>
+      <ul>
+        <li>Regression Suite Execution</li>
+        <li>Smoke Test Automation</li>
+        <li>Bug Triage Meeting</li>
+        <li>Update Test Cases Documentation</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <a href="FT_index.html" class="back-home">← Back to Functional Index</a>
+</div>
+</body>
+</html>

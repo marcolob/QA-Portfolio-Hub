@@ -16,23 +16,31 @@
   --card-hover-gradient: linear-gradient(135deg, #2845a1, #6ab0f3);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
+/* ----------------- GLOBAL BACKGROUND FIX ----------------- */
+html, body {
   background: var(--bg);
   color: var(--text);
+  min-height: 100vh;
   margin: 0;
-  font-size: var(--text-size);
-  -webkit-font-smoothing: antialiased;
+  padding: 0;
 }
 
 .container {
   max-width: var(--max-width);
   margin: auto;
   padding: 2.5rem;
+  background: none;
+}
+
+/* ----------------- GENERAL STYLES ----------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-size);
+  -webkit-font-smoothing: antialiased;
 }
 
 .hero {
@@ -190,6 +198,15 @@ code, pre {
 .back-home {
   margin-top: 2rem;
   display: inline-block;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.back-home:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-strong);
 }
 
 @media (max-width: 768px) {
