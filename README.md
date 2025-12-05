@@ -3,7 +3,7 @@
 [![Live Preview](https://img.shields.io/badge/Live-Preview-blue?style=flat-square)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
-This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section** with a dark theme and interactive dashboard.
+This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and a **Cypress iGaming Demo** project.
 
 ---
 
@@ -11,6 +11,7 @@ This repository simulates a production-level QA workflow for both **web and mobi
 I am a QA Manual & Automation engineer with hands-on experience in:
 
 - Functional & regression testing  
+- Non-functional testing (Performance, Usability, Compatibility)  
 - Test case design and execution  
 - Web & Mobile testing  
 - API testing with Postman  
@@ -45,15 +46,24 @@ QA-Portfolio-Hub/
 │ ├── api_tests.md
 │ ├── checklists.md
 │ ├── test_matrix.csv
-│ └── functional_testing/
-│ ├── FT_index.html
-│ ├── FT_Bug_Reports.html
-│ ├── FT_Checklists.html
-│ ├── FT_Dashboard.html
-│ └── FT_Test_Cases.html
+│ ├── functional_testing/
+│ │ ├── FT_index.html
+│ │ ├── FT_Bug_Reports.html
+│ │ ├── FT_Checklists.html
+│ │ ├── FT_Dashboard.html
+│ │ └── FT_Test_Cases.html
+│ └── non_functional_testing/
+│ ├── NF_index.html
+│ ├── NF_Performance.html
+│ ├── NF_Usability.html
+│ └── NF_Compatibility.html
 ├── bug_reports/
-└── reports/
-└── screenshots/
+├── reports/
+├── screenshots/
+└── cypress-igaming-demo/
+
+markdown
+Copia codice
 
 ---
 
@@ -70,7 +80,8 @@ Complete document describing scope, strategy, test types, environments, entry/ex
 - Regression coverage  
 
 ### ✔️ Automation
-- Cypress test scripts  
+- **Cypress iGaming Demo**: End-to-end automation for gaming features, including CI/CD workflow.  
+- Cypress test scripts for web applications  
 - Basic Playwright examples  
 - CI/CD integration examples  
 
@@ -101,6 +112,11 @@ Each bug includes:
 - **Checklists**: [FT Checklists](docs/functional_testing/FT_Checklists.html) – Pre-release, regression, smoke test checklists  
 - **Dashboard**: [FT Dashboard](docs/functional_testing/FT_Dashboard.html) – Summary of execution metrics, bug status, progress bars  
 - **Test Cases**: [FT Test Cases](docs/functional_testing/FT_Test_Cases.html) – Functional test cases for Web & Mobile  
+
+### ✔️ Non-Functional Testing
+- **Index**: [NF Index](docs/non_functional_testing/NF_index.html) – Overview of non-functional testing  
+- Performance, Usability, Compatibility tests with detailed observations  
+- Execution reports and risk assessment  
 
 ### ✔️ Test Matrix
 CSV file for coverage, risk, components, priority, execution status.
