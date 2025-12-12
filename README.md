@@ -1,9 +1,8 @@
 # QA Manual & Automation Portfolio – Marco Lo Bianco
 
-[![Live Preview](https://img.shields.io/badge/Live-Preview-blue?style=flat-square)](https://marcolob.github.io/QA-Portfolio-Hub/)
+A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, manual & automation tests, API validations, and structured test strategies.
 
-A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
-This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and **two Cypress automation projects**, plus a **QA User Onboarding System demo project**.
+[![Open in browser](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 ---
 
@@ -22,12 +21,6 @@ I am a QA Manual & Automation engineer with hands-on experience in:
 - Working in Agile/Scrum environments  
 
 This portfolio demonstrates how I approach QA in a structured and professional way.
-
----
-
-## 🌐 Live Portfolio
-Check the live version on GitHub Pages:  
-[![Open in browser](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 ---
 
