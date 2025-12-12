@@ -3,7 +3,7 @@
 [![Live Preview](https://img.shields.io/badge/Live-Preview-blue?style=flat-square)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
-This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and **two Cypress automation projects**.
+This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and **two Cypress automation projects**, plus a **QA User Onboarding System demo project**.
 
 ---
 
@@ -57,6 +57,7 @@ QA-Portfolio-Hub/
 │ ├── NF_Performance.html
 │ ├── NF_Usability.html
 │ └── NF_Compatibility.html
+├── docs/demo_project.html
 ├── bug_reports/
 ├── reports/
 ├── screenshots/
@@ -96,6 +97,18 @@ Complete document describing scope, strategy, test types, environments, entry/ex
 - Request → Response validation  
 - JSON schema testing  
 
+### ✔️ QA User Onboarding System – Demo Project
+This demo project showcases comprehensive QA testing including Postman API collections, mock server simulation, and manual UI/UX test cases.
+
+**Project Links:**  
+- [GitHub Repository](https://github.com/marcolob/QA-user-onboarding-system)  
+- [Mock Server Demo](https://mp76eac450f43f648d29.free.beeceptor.com)  
+- [Postman Collection](https://github.com/marcolob/QA-user-onboarding-system/tree/main/QA-user-onboarding-system/postman)  
+- Test Cases & Screenshots (folder ready to populate)
+
+**Screenshots:**  
+Folder structure ready for screenshots to be added later.
+
 ### ✔️ Bug Reports
 Each bug includes:
 - Title  
@@ -115,11 +128,11 @@ Each bug includes:
 - **Index**: [FT Index](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_index.html) – Overview of all functional testing documents  
 - **Bug Reports**: [FT Bug Reports](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Bug_Reports.html) – Detailed bug reports with steps, severity, priority, TestRail/Jira links  
 - **Checklists**: [FT Checklists](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Checklists.html) – Pre-release, regression, smoke test checklists  
-- **Dashboard**: [FT Dashboard]([docs/functional_testing/FT_Dashboard.html](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Dashboard.html)) – Summary of execution metrics, bug status, progress bars  
-- **Test Cases**: [FT Test Cases]([docs/functional_testing/FT_Test_Cases.html](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Test_Cases.html)) – Functional test cases for Web & Mobile  
+- **Dashboard**: [FT Dashboard](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Dashboard.html) – Summary of execution metrics, bug status, progress bars  
+- **Test Cases**: [FT Test Cases](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Test_Cases.html) – Functional test cases for Web & Mobile  
 
 ### ✔️ Non-Functional Testing
-- **Index**: [NF Index]([docs/non_functional_testing/NF_index.html](https://marcolob.github.io/QA-Portfolio-Hub/docs/non_functional_testing/NF_index.html)) – Overview of non-functional testing  
+- **Index**: [NF Index](https://marcolob.github.io/QA-Portfolio-Hub/docs/non_functional_testing/NF_index.html) – Overview of non-functional testing  
 - Performance, Usability, Compatibility tests with detailed observations  
 - Execution reports and risk assessment  
 
