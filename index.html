@@ -1,14 +1,59 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QA Portfolio - Marco Lo Bianco</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Sticky Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: #0f0f0f;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+    }
+
+    .sticky-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .sticky-nav a:hover {
+      color: var(--accent);
+    }
+
+    .sticky-nav a:not(:last-child)::after {
+      content: "|";
+      color: #fff;
+      margin-left: 1rem;
+    }
+
+    /* Existing body adjustments to prevent overlap */
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
+
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav">
+    <a href="#manual-testing">Manual Testing</a>
+    <a href="#automation">Automation</a>
+    <a href="#api-testing">API Testing</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- Hero Section -->
   <div class="hero fade-in">
@@ -17,8 +62,8 @@
   </div>
 
   <!-- Manual Testing -->
-  <section class="cards fade-in">
-    <h2>🛠️ Manual Testing</h2>
+  <section id="manual-testing" class="cards fade-in">
+    <h2> Manual Testing</h2>
     <div class="card-grid">
       <a href="docs/manual_tests.html" class="card">
         <h3>Manual Tests</h3>
@@ -48,8 +93,8 @@
   </section>
 
   <!-- Automation -->
-  <section class="cards fade-in">
-    <h2>🤖 Automation</h2>
+  <section id="automation" class="cards fade-in">
+    <h2> Automation</h2>
     <div class="card-grid">
       <a href="https://github.com/marcolob/cypress-e2e-automation-framework" class="card" target="_blank">
         <h3>Cypress E2E Framework </h3>
@@ -67,26 +112,24 @@
   </section>
 
   <!-- API Testing -->
-  <section class="cards fade-in">
-    <h2>🔗 API Testing</h2>
+  <section id="api-testing" class="cards fade-in">
+    <h2> API Testing</h2>
     <div class="card-grid">
-      <!-- Existing API Tests Card -->
       <a href="docs/api_tests.html" class="card">
         <h3>API Tests</h3>
         <p>Postman collections and API testing examples with JSON schema validation, authentication flows, and edge-case handling.</p>
       </a>
 
-      <!-- QA User Onboarding System Demo Card -->
       <a href="docs/demo_project.html" class="card">
         <h3>QA User Onboarding System – Demo Project</h3>
-        <p>Click to view full project details, links, and screenshots.</p>
+        <p>This demo project showcases comprehensive QA testing including Postman API collections, mock server simulation, and manual UI/UX test cases.</p>
       </a>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section class="skills-section fade-in">
-    <h2>💡 Skills</h2>
+  <section id="skills" class="skills-section fade-in">
+    <h2> Skills</h2>
     <ul>
       <li>Manual Testing (Functional & Non-Functional)</li>
       <li>Automation (Cypress / basic Playwright)</li>
@@ -99,8 +142,8 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="cards fade-in">
-    <h2>📬 Contact</h2>
+  <section id="contact" class="cards fade-in">
+    <h2> Contact</h2>
     <div class="card-grid">
       <div class="card">
         <h3>Marco Lo Bianco</h3>
