@@ -1,14 +1,13 @@
 # QA Manual & Automation Portfolio – Marco Lo Bianco
 
-[![Live Preview](https://img.shields.io/badge/Live-Preview-blue?style=flat-square)](https://marcolob.github.io/QA-Portfolio-Hub/)
+A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, manual & automation tests, API validations, and structured test strategies.
 
-A complete QA Manual & Automation testing portfolio showcasing real-world documentation, test cases, bug reports, API validations, and structured test strategies.  
-This repository simulates a production-level QA workflow for both **web and mobile applications**, now including a **functional testing section**, **non-functional testing**, and **two Cypress automation projects**, plus a **QA User Onboarding System demo project**.
+[![Open in browser](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 ---
 
 ## 🚀 About Me
-I am a QA Manual & Automation engineer with hands-on experience in:
+I'm a QA Manual & Automation engineer with hands-on experience in:
 
 - Functional & regression testing  
 - Non-functional testing (Performance, Usability, Compatibility)  
@@ -22,12 +21,6 @@ I am a QA Manual & Automation engineer with hands-on experience in:
 - Working in Agile/Scrum environments  
 
 This portfolio demonstrates how I approach QA in a structured and professional way.
-
----
-
-## 🌐 Live Portfolio
-Check the live version on GitHub Pages:  
-[![Open in browser](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge)](https://marcolob.github.io/QA-Portfolio-Hub/)
 
 ---
 
@@ -88,8 +81,8 @@ Complete document describing scope, strategy, test types, environments, entry/ex
   Full-stack web application automation framework with structured test suites and CI/CD integration.  
   [![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge)](https://github.com/marcolob/cypress-e2e-automation-framework)  
 
-- Basic Playwright examples for Web & Mobile testing  
-- CI/CD integration examples  
+- Basic Playwright examples for Web & Mobile testing (available soon)  
+- CI/CD integration examples [FRAMEWORK](https://github.com/marcolob/cypress-e2e-automation-framework/tree/main/.github/workflows)  
 
 ### ✔️ API Tests (Postman)
 - Collection examples  
@@ -97,17 +90,18 @@ Complete document describing scope, strategy, test types, environments, entry/ex
 - Request → Response validation  
 - JSON schema testing  
 
-### ✔️ QA User Onboarding System – Demo Project
-This demo project showcases comprehensive QA testing including Postman API collections, mock server simulation, and manual UI/UX test cases.
+- **QA User Onboarding System – Demo Project**:  
+  Demo project showcasing API validation with Postman, mock server simulation, and manual UI/UX test cases.  
+  [![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge)](https://github.com/marcolob/QA-user-onboarding-system)  
 
-**Project Links:**  
-- [GitHub Repository](https://github.com/marcolob/QA-user-onboarding-system)  
-- [Mock Server Demo](https://mp76eac450f43f648d29.free.beeceptor.com)  
-- [Postman Collection](https://github.com/marcolob/QA-user-onboarding-system/tree/main/QA-user-onboarding-system/postman)  
-- Test Cases & Screenshots (folder ready to populate)
+  **Project Links:**  
+  - [GitHub Repository](https://github.com/marcolob/QA-user-onboarding-system)  
+  - [Mock Server Demo](https://mp76eac450f43f648d29.free.beeceptor.com)  
+  - [Postman Collection](https://github.com/marcolob/QA-user-onboarding-system/tree/main/QA-user-onboarding-system/postman)  
+  - [Test Cases & Screenshots](https://github.com/marcolob/QA-user-onboarding-system/blob/main/QA-user-onboarding-system/onboarding_testcases.csv)   
 
-**Screenshots:**  
-Folder structure ready for screenshots to be added later.
+  **Screenshots:**  
+  Folder structure ready for screenshots to be added later.
 
 ### ✔️ Bug Reports
 Each bug includes:
