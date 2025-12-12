@@ -62,15 +62,6 @@ body {
   color: var(--text-light);
 }
 
-.hero h1 span.emoji {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.hero h1 span.emoji:hover {
-  transform: rotate(20deg) scale(1.3);
-}
-
 /* ----------------- CARDS ----------------- */
 section.cards {
   display: flex;
@@ -206,36 +197,6 @@ code, pre {
   text-shadow: 0 0 10px var(--accent-strong);
 }
 
-/* ----------------- STICKY NAVIGATION ----------------- */
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem 0;
-  z-index: 1000;
-  border-bottom: 1px solid #333;
-}
-
-.sticky-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.sticky-nav a:hover {
-  color: var(--accent);
-}
-
-.sticky-nav a:not(:last-child)::after {
-  content: "|";
-  color: #fff;
-  margin-left: 1rem;
-}
-
 /* ----------------- RESPONSIVE ----------------- */
 @media (max-width: 768px) {
   .container {
@@ -256,10 +217,5 @@ code, pre {
 
   .hero p {
     font-size: 16px;
-  }
-
-  /* Nasconde la navbar su mobile */
-  .sticky-nav {
-    display: none;
   }
 }
