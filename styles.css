@@ -264,8 +264,7 @@ code, pre {
     gap: 0.5rem;
   }
 
-  .sticky-nav a:not(:last-child)::after {
-    content: "";
-    margin: 0;
+   .sticky-nav {
+    display: none;  /* <-- Nasconde la navbar su mobile */
   }
 }
