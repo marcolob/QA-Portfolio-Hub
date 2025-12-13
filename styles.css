@@ -27,6 +27,7 @@ html, body {
 }
 
 /* ---------------- HERO ---------------- */
+
 .hero {
   position: relative;
   text-align: center;
@@ -67,9 +68,9 @@ html, body {
 }
 
 .portfolio-label {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-family: 'Sora', sans-serif; 
+  font-weight: 700;                 
+  font-size: clamp(1rem, 3vw, 1.4rem); 
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.85;
@@ -102,6 +103,7 @@ html, body {
 }
 
 /* ---------------- SECTIONS ---------------- */
+
 section {
   margin-bottom: 3rem;
 }
@@ -118,6 +120,7 @@ section h2 {
 }
 
 /* ---------------- CARDS ---------------- */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -151,7 +154,40 @@ section h2 {
   box-shadow: 0 20px 60px rgba(56,189,248,0.25);
 }
 
+/* ---------------- SKILLS ---------------- */
+
+.skills-section {
+  margin-top: 1.5rem;
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.skills-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-section li {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(56, 191, 248, 0.188);
+  font-weight: 900; /* tutte in bold */
+  transition: var(--transition);
+}
+
+.skills-section li:hover {
+  background: var(--accent);
+  color: #020617;
+}
+
 /* ---------------- LINKS ---------------- */
+
 a {
   color: var(--accent-strong);
   text-decoration: none;
@@ -162,6 +198,7 @@ a:hover {
 }
 
 /* ---------------- ANIMATION ---------------- */
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -176,6 +213,7 @@ a:hover {
 }
 
 /* ---------------- RESPONSIVE ---------------- */
+
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem;
