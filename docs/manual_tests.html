@@ -6,42 +6,94 @@
 <title>Manual Tests - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../styles.css">
 <style>
-.manual-card details {
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 15px;
-  margin-bottom: 1.5rem;
-  color: #f2f2f2;
-}
+  .hero {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
 
-.manual-card summary {
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  color: #6ab0f3;
-}
+  .hero h1 {
+    color: var(--accent-strong);
+    font-size: clamp(36px, 5vw, 50px);
+  }
 
-.manual-card ol, .manual-card ul, .manual-card pre {
-  margin: 10px 0 0 0;
-  padding-left: 1.2rem;
-}
+  .manual-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-.manual-card .field-label {
-  color: #f2f2f2;
-  font-weight: bold;
-}
+  .manual-card details {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+  }
 
-.manual-card .field-value {
-  color: #bdbdbd;
-}
+  .manual-card details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+  }
 
-/* Status colors */
-.status-pass { color: #4caf50 !important; font-weight: bold; }
-.status-fail { color: #ff4c4c !important; font-weight: bold; }
-.status-tbd  { color: #ff9800 !important; font-weight: bold; }
+  .manual-card summary {
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    color: var(--accent-strong);
+  }
 
-.back-home { display: inline-block; margin-top: 2rem; text-align: center; }
+  .manual-card ol, .manual-card ul, .manual-card pre {
+    margin: 10px 0 0 0;
+    padding-left: 1.2rem;
+  }
+
+  .manual-card .field-label {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .manual-card .field-value {
+    color: var(--text-light);
+  }
+
+  .status-pass { color: #4caf50 !important; font-weight: bold; }
+  .status-fail { color: #ff4c4c !important; font-weight: bold; }
+  .status-tbd  { color: #ff9800 !important; font-weight: bold; }
+
+  .back-home {
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--accent-strong);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .back-home:hover {
+    background: var(--accent);
+    color: #0f0f0f;
+    transform: translateY(-3px);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
@@ -53,36 +105,17 @@
     <p>Interactive manual test cases for Web & Mobile applications. Expand each card to view detailed steps, expected results, and actual results.</p>
   </div>
 
-  <section class="cards fade-in manual-card">
+  <section class="manual-card fade-in">
 
     <!-- TC001 -->
     <details open>
       <summary>TC001 – Web Login Module 🔐</summary>
       <ol>
-        <li><span class="field-label">Steps:</span>
-          <span class="field-value">
-            Open the web application → Navigate to login page → Enter valid credentials → Click "Login"
-          </span>
-        </li>
-        <li><span class="field-label">Expected Result:</span>
-          <span class="field-value">User is redirected to the dashboard</span>
-        </li>
-        <li><span class="field-label">Actual Result:</span>
-          <span class="field-value">Login successful · Dashboard loaded correctly · No errors in console</span>
-        </li>
-        <li><span class="field-label">Status:</span>
-          <span class="field-value status-pass">PASS ✔️</span>
-        </li>
-        <li><span class="field-label">TestRail:</span>
-          <span class="field-value">
-            <a href="https://testrail.fake.com/index.php?/tests/view/TC001" target="_blank">
-              TC001 – Web Login Module
-            </a>
-          </span>
-        </li>
-        <li><span class="field-label">Reported By:</span>
-          <span class="field-value">Marco Lo Bianco</span>
-        </li>
+        <li><span class="field-label">Steps:</span> <span class="field-value">Open the web app → Navigate to login → Enter valid credentials → Click "Login"</span></li>
+        <li><span class="field-label">Expected:</span> <span class="field-value">User is redirected to the dashboard</span></li>
+        <li><span class="field-label">Actual:</span> <span class="field-value">Login successful, dashboard loaded, no console errors</span></li>
+        <li><span class="field-label">Status:</span> <span class="field-value status-pass">PASS ✔️</span></li>
+        <li><span class="field-label">TestRail:</span> <span class="field-value"><a href="#" target="_blank">TC001 Link</a></span></li>
       </ol>
     </details>
 
@@ -90,30 +123,11 @@
     <details>
       <summary>TC002 – Web Dashboard Widgets 📊</summary>
       <ol>
-        <li><span class="field-label">Steps:</span>
-          <span class="field-value">
-            Log in → Navigate to dashboard → Verify all widgets loaded correctly → Interact with filters and sorters
-          </span>
-        </li>
-        <li><span class="field-label">Expected Result:</span>
-          <span class="field-value">Widgets display correct data, filters and sorting function properly</span>
-        </li>
-        <li><span class="field-label">Actual Result:</span>
-          <span class="field-value">[Placeholder for results]</span>
-        </li>
-        <li><span class="field-label">Status:</span>
-          <span class="field-value status-tbd">TBD ⚠️</span>
-        </li>
-        <li><span class="field-label">TestRail:</span>
-          <span class="field-value">
-            <a href="https://testrail.fake.com/index.php?/tests/view/TC002" target="_blank">
-              TC002 – Web Dashboard Widgets
-            </a>
-          </span>
-        </li>
-        <li><span class="field-label">Reported By:</span>
-          <span class="field-value">Marco Lo Bianco</span>
-        </li>
+        <li><span class="field-label">Steps:</span> <span class="field-value">Log in → Navigate to dashboard → Verify widgets → Interact with filters</span></li>
+        <li><span class="field-label">Expected:</span> <span class="field-value">Widgets display correct data; filters & sorting work</span></li>
+        <li><span class="field-label">Actual:</span> <span class="field-value">[Placeholder]</span></li>
+        <li><span class="field-label">Status:</span> <span class="field-value status-tbd">TBD ⚠️</span></li>
+        <li><span class="field-label">TestRail:</span> <span class="field-value"><a href="#" target="_blank">TC002 Link</a></span></li>
       </ol>
     </details>
 
@@ -121,30 +135,11 @@
     <details>
       <summary>TC003 – Mobile Login Module 📱</summary>
       <ol>
-        <li><span class="field-label">Steps:</span>
-          <span class="field-value">
-            Launch mobile app → Navigate to login screen → Enter valid credentials → Click "Login" → Observe session creation and navigation
-          </span>
-        </li>
-        <li><span class="field-label">Expected Result:</span>
-          <span class="field-value">User is logged in and main screen is displayed</span>
-        </li>
-        <li><span class="field-label">Actual Result:</span>
-          <span class="field-value">[Placeholder for results]</span>
-        </li>
-        <li><span class="field-label">Status:</span>
-          <span class="field-value status-tbd">TBD ⚠️</span>
-        </li>
-        <li><span class="field-label">TestRail:</span>
-          <span class="field-value">
-            <a href="https://testrail.fake.com/index.php?/tests/view/TC003" target="_blank">
-              TC003 – Mobile Login Module
-            </a>
-          </span>
-        </li>
-        <li><span class="field-label">Reported By:</span>
-          <span class="field-value">Marco Lo Bianco</span>
-        </li>
+        <li><span class="field-label">Steps:</span> <span class="field-value">Launch mobile app → Navigate to login → Enter valid credentials → Click "Login"</span></li>
+        <li><span class="field-label">Expected:</span> <span class="field-value">User is logged in and main screen is displayed</span></li>
+        <li><span class="field-label">Actual:</span> <span class="field-value">[Placeholder]</span></li>
+        <li><span class="field-label">Status:</span> <span class="field-value status-tbd">TBD ⚠️</span></li>
+        <li><span class="field-label">TestRail:</span> <span class="field-value"><a href="#" target="_blank">TC003 Link</a></span></li>
       </ol>
     </details>
 
@@ -152,30 +147,11 @@
     <details>
       <summary>TC004 – Mobile Form Validation 📝</summary>
       <ol>
-        <li><span class="field-label">Steps:</span>
-          <span class="field-value">
-            Open registration form → Leave required fields empty → Submit form → Observe validation messages
-          </span>
-        </li>
-        <li><span class="field-label">Expected Result:</span>
-          <span class="field-value">Validation errors displayed for all required fields</span>
-        </li>
-        <li><span class="field-label">Actual Result:</span>
-          <span class="field-value">[Placeholder for results]</span>
-        </li>
-        <li><span class="field-label">Status:</span>
-          <span class="field-value status-tbd">TBD ⚠️</span>
-        </li>
-        <li><span class="field-label">TestRail:</span>
-          <span class="field-value">
-            <a href="https://testrail.fake.com/index.php?/tests/view/TC004" target="_blank">
-              TC004 – Mobile Form Validation
-            </a>
-          </span>
-        </li>
-        <li><span class="field-label">Reported By:</span>
-          <span class="field-value">Marco Lo Bianco</span>
-        </li>
+        <li><span class="field-label">Steps:</span> <span class="field-value">Open registration form → Leave required fields empty → Submit → Observe validation messages</span></li>
+        <li><span class="field-label">Expected:</span> <span class="field-value">Validation errors displayed for all required fields</span></li>
+        <li><span class="field-label">Actual:</span> <span class="field-value">[Placeholder]</span></li>
+        <li><span class="field-label">Status:</span> <span class="field-value status-tbd">TBD ⚠️</span></li>
+        <li><span class="field-label">TestRail:</span> <span class="field-value"><a href="#" target="_blank">TC004 Link</a></span></li>
       </ol>
     </details>
 
@@ -183,30 +159,11 @@
     <details>
       <summary>TC005 – Navigation Menu 🧭</summary>
       <ol>
-        <li><span class="field-label">Steps:</span>
-          <span class="field-value">
-            Log in → Click each menu item → Verify correct page loads → Check responsiveness on web & mobile
-          </span>
-        </li>
-        <li><span class="field-label">Expected Result:</span>
-          <span class="field-value">All menu links navigate correctly without errors</span>
-        </li>
-        <li><span class="field-label">Actual Result:</span>
-          <span class="field-value">[Placeholder for results]</span>
-        </li>
-        <li><span class="field-label">Status:</span>
-          <span class="field-value status-tbd">TBD ⚠️</span>
-        </li>
-        <li><span class="field-label">TestRail:</span>
-          <span class="field-value">
-            <a href="https://testrail.fake.com/index.php?/tests/view/TC005" target="_blank">
-              TC005 – Navigation Menu
-            </a>
-          </span>
-        </li>
-        <li><span class="field-label">Reported By:</span>
-          <span class="field-value">Marco Lo Bianco</span>
-        </li>
+        <li><span class="field-label">Steps:</span> <span class="field-value">Log in → Click menu items → Verify pages load correctly → Check responsiveness</span></li>
+        <li><span class="field-label">Expected:</span> <span class="field-value">All menu links navigate correctly</span></li>
+        <li><span class="field-label">Actual:</span> <span class="field-value">[Placeholder]</span></li>
+        <li><span class="field-label">Status:</span> <span class="field-value status-tbd">TBD ⚠️</span></li>
+        <li><span class="field-label">TestRail:</span> <span class="field-value"><a href="#" target="_blank">TC005 Link</a></span></li>
       </ol>
     </details>
 

@@ -5,6 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Functional Testing - Checklists</title>
 <link rel="stylesheet" href="../../styles.css">
+<style>
+  .hero {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .hero h1 {
+    color: var(--accent-strong);
+    font-size: clamp(36px, 5vw, 50px);
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    flex: 1 1 300px;
+    transition: transform var(--transition);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+  }
+
+  .card h3 {
+    color: var(--accent-strong);
+    margin-bottom: 1rem;
+  }
+
+  .card ul {
+    list-style: none;
+    padding-left: 0;
+    color: var(--text-light);
+  }
+
+  .card ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .back-home {
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--accent-strong);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .back-home:hover {
+    background: var(--accent);
+    color: #0f0f0f;
+    transform: translateY(-3px);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
 <div class="container">
@@ -48,7 +128,10 @@
     </div>
   </section>
 
-  <a href="FT_index.html" class="back-home">← Back to Functional Index</a>
+  <section>
+    <a href="FT_index.html" class="back-home">← Back to Functional Index</a>
+  </section>
+
 </div>
 </body>
 </html>
