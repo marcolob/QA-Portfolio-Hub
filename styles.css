@@ -27,7 +27,6 @@ html, body {
 }
 
 /* ---------------- HERO ---------------- */
-
 .hero {
   position: relative;
   text-align: center;
@@ -68,9 +67,9 @@ html, body {
 }
 
 .portfolio-label {
-  font-family: 'Sora', sans-serif; 
-  font-weight: 700;                 
-  font-size: clamp(1rem, 3vw, 1.4rem); 
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.4rem);
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.85;
@@ -103,7 +102,6 @@ html, body {
 }
 
 /* ---------------- SECTIONS ---------------- */
-
 section {
   margin-bottom: 3rem;
 }
@@ -120,7 +118,6 @@ section h2 {
 }
 
 /* ---------------- CARDS ---------------- */
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -155,7 +152,6 @@ section h2 {
 }
 
 /* ---------------- SKILLS ---------------- */
-
 .skills-section {
   margin-top: 1.5rem;
   padding: 1.5rem;
@@ -167,16 +163,18 @@ section h2 {
   background: linear-gradient(160deg, rgba(15,23,42,0.95), rgba(0,0,0,0.95));
   border: 1px solid rgba(56,189,248,0.15);
   transition: var(--transition);
+  justify-content: center;
 }
 
 .skills-section .skill-tag {
-  color: #bdbdbd; /* grigio chiaro */
+  color: #bdbdbd;
   font-weight: 900;
   padding: 0.6rem 1rem;
   border-radius: 999px;
   background: rgba(15,23,42,0.95);
   border: 1px solid rgba(56,189,248,0.15);
   transition: var(--transition);
+  text-align: center;
 }
 
 .skills-section .skill-tag:hover {
@@ -185,7 +183,6 @@ section h2 {
 }
 
 /* ---------------- LINKS ---------------- */
-
 a {
   color: var(--accent-strong);
   text-decoration: none;
@@ -196,7 +193,6 @@ a:hover {
 }
 
 /* ---------------- ANIMATION ---------------- */
-
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -211,22 +207,27 @@ a:hover {
 }
 
 /* ---------------- RESPONSIVE ---------------- */
-
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem;
   }
 
-  /* Hero nav tags: due per riga */
-  .hero-tags a {
-    flex: 1 1 45%;
+  /* Centrare hero e sezioni */
+  .hero, .cards, .skills-section {
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* Skills grid su mobile: due per riga */
-  .skills-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  /* Skills: fino a 3 a riga */
+  .skills-section .skill-tag {
+    flex: 1 1 calc(33.333% - 0.8rem);
+    max-width: calc(33.333% - 0.8rem);
+    box-sizing: border-box;
+  }
+
+  /* Navbar hero tags: due a riga se necessario */
+  .hero-tags {
+    justify-content: center;
   }
 }
