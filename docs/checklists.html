@@ -6,38 +6,83 @@
 <title>QA Checklists - Marco Lo Bianco</title>
 <link rel="stylesheet" href="../styles.css">
 <style>
-/* Card checklist specifiche */
+/* ---------------- Checklist Cards ---------------- */
 .checklist-card details {
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 15px;
-  margin-bottom: 1.5rem;
-  color: #f2f2f2;
+  background: linear-gradient(160deg, rgba(15,23,42,0.95), rgba(0,0,0,0.95));
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.8rem;
+  color: #e5e7eb;
+  border: 1px solid rgba(56,189,248,0.15);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  transition: 0.35s ease;
+}
+
+.checklist-card details:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 60px rgba(56,189,248,0.25);
 }
 
 .checklist-card summary {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 700;
   cursor: pointer;
   outline: none;
-  color: #6ab0f3;
+  color: #38bdf8;
+  margin-bottom: 1rem;
 }
 
-.checklist-card pre, .checklist-card ol, .checklist-card ul {
+.checklist-card ol, 
+.checklist-card ul, 
+.checklist-card pre {
   margin: 10px 0 0 0;
-  padding-left: 1.2rem;
+  padding-left: 1.5rem;
 }
 
 .checklist-card .field-label {
-  color: #f2f2f2;
   font-weight: bold;
+  color: #e5e7eb;
 }
 
 .checklist-card .field-value {
   color: #bdbdbd;
 }
 
-.back-home { display: inline-block; margin-top: 2rem; text-align: center; }
+/* ---------------- Back Home Button ---------------- */
+.back-home {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 18px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(56,189,248,0.2);
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.35s ease;
+  text-align: center;
+}
+
+.back-home:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-3px);
+}
+
+/* ---------------- Fade-in Animation ---------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
 <body>
@@ -55,24 +100,12 @@
     <details open>
       <summary>🟢 Sanity / Pre-release Checklist</summary>
       <ol>
-        <li><span class="field-label">Login/Logout:</span> 
-            <span class="field-value">Tested on Web Chrome & Mobile Android ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Dashboard:</span> 
-            <span class="field-value">Widgets load correctly, filters applied ✅ Passed</span>
-        </li>
-        <li><span class="field-label">API Endpoints:</span> 
-            <span class="field-value">GET /products < 2s, POST /orders success ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Forms Validation:</span> 
-            <span class="field-value">Empty email triggers error, password strength validated ✅ Passed</span>
-        </li>
-        <li><span class="field-label">UI Quick Check:</span> 
-            <span class="field-value">Buttons and icons render correctly ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Cross-browser Check:</span> 
-            <span class="field-value">Chrome ✅ Passed, Firefox ✅ Passed, Edge ❌ Minor layout glitch</span>
-        </li>
+        <li><span class="field-label">Login/Logout:</span> <span class="field-value">Tested on Web Chrome & Mobile Android ✅ Passed</span></li>
+        <li><span class="field-label">Dashboard:</span> <span class="field-value">Widgets load correctly, filters applied ✅ Passed</span></li>
+        <li><span class="field-label">API Endpoints:</span> <span class="field-value">GET /products < 2s, POST /orders success ✅ Passed</span></li>
+        <li><span class="field-label">Forms Validation:</span> <span class="field-value">Empty email triggers error, password strength validated ✅ Passed</span></li>
+        <li><span class="field-label">UI Quick Check:</span> <span class="field-value">Buttons and icons render correctly ✅ Passed</span></li>
+        <li><span class="field-label">Cross-browser Check:</span> <span class="field-value">Chrome ✅ Passed, Firefox ✅ Passed, Edge ❌ Minor layout glitch</span></li>
       </ol>
       <p><span class="field-label">Reported By:</span> <span class="field-value">Marco Lo Bianco</span></p>
     </details>
@@ -81,27 +114,13 @@
     <details>
       <summary>🟠 Regression Suite Checklist</summary>
       <ol>
-        <li><span class="field-label">Login/Logout flows:</span> 
-            <span class="field-value">Web & Mobile, token persistence ✅ Passed</span>
-        </li>
-        <li><span class="field-label">User Management:</span> 
-            <span class="field-value">Create, edit, delete users ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Dashboard & Widgets:</span> 
-            <span class="field-value">Filtering and sorting correct ✅ Passed</span>
-        </li>
-        <li><span class="field-label">API CRUD operations:</span> 
-            <span class="field-value">Products, orders, auth endpoints ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Mobile App Tests:</span> 
-            <span class="field-value">Swipe, rotation, notifications ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Cross-browser & cross-device:</span> 
-            <span class="field-value">UI/UX consistent ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Security checks:</span> 
-            <span class="field-value">Token validation, session handling ✅ Passed</span>
-        </li>
+        <li><span class="field-label">Login/Logout flows:</span> <span class="field-value">Web & Mobile, token persistence ✅ Passed</span></li>
+        <li><span class="field-label">User Management:</span> <span class="field-value">Create, edit, delete users ✅ Passed</span></li>
+        <li><span class="field-label">Dashboard & Widgets:</span> <span class="field-value">Filtering and sorting correct ✅ Passed</span></li>
+        <li><span class="field-label">API CRUD operations:</span> <span class="field-value">Products, orders, auth endpoints ✅ Passed</span></li>
+        <li><span class="field-label">Mobile App Tests:</span> <span class="field-value">Swipe, rotation, notifications ✅ Passed</span></li>
+        <li><span class="field-label">Cross-browser & cross-device:</span> <span class="field-value">UI/UX consistent ✅ Passed</span></li>
+        <li><span class="field-label">Security checks:</span> <span class="field-value">Token validation, session handling ✅ Passed</span></li>
       </ol>
       <p><span class="field-label">Reported By:</span> <span class="field-value">Marco Lo Bianco</span></p>
     </details>
@@ -110,21 +129,11 @@
     <details>
       <summary>🔵 Smoke Tests Checklist</summary>
       <ol>
-        <li><span class="field-label">Login with valid credentials:</span> 
-            <span class="field-value">Dashboard loads correctly ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Basic Navigation:</span> 
-            <span class="field-value">Main menu links clickable ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Critical API Endpoints:</span> 
-            <span class="field-value">GET /products, POST /orders ✅ Passed</span>
-        </li>
-        <li><span class="field-label">UI Controls:</span> 
-            <span class="field-value">Buttons and forms respond ✅ Passed</span>
-        </li>
-        <li><span class="field-label">Error Handling:</span> 
-            <span class="field-value">Invalid inputs show messages ❌ Minor validation bug</span>
-        </li>
+        <li><span class="field-label">Login with valid credentials:</span> <span class="field-value">Dashboard loads correctly ✅ Passed</span></li>
+        <li><span class="field-label">Basic Navigation:</span> <span class="field-value">Main menu links clickable ✅ Passed</span></li>
+        <li><span class="field-label">Critical API Endpoints:</span> <span class="field-value">GET /products, POST /orders ✅ Passed</span></li>
+        <li><span class="field-label">UI Controls:</span> <span class="field-value">Buttons and forms respond ✅ Passed</span></li>
+        <li><span class="field-label">Error Handling:</span> <span class="field-value">Invalid inputs show messages ❌ Minor validation bug</span></li>
       </ol>
       <p><span class="field-label">Reported By:</span> <span class="field-value">Marco Lo Bianco</span></p>
     </details>
@@ -132,7 +141,7 @@
   </section>
 
   <section>
-    <a class="card back-home" href="/index.html">⬅ Back to Home</a>
+    <a class="back-home" href="/index.html">⬅ Back to Home</a>
   </section>
 
 </div>
