@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>QA Portfolio - Marco Lo Bianco</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Existing body adjustments to prevent overlap */
-    body {
-      scroll-behavior: smooth;
-    }
-  </style>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
 <div class="container">
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <div class="hero fade-in">
-    <h1>👋 Hello, I'm Marco — QA Engineer</h1>
-    <p>Welcome to my professional portfolio. Explore my projects on Manual Testing, Automation, API Testing, bug reports, test cases, and more.</p>
+    <span class="hero-badge">QA ENGINEER • TEST & AUTOMATION</span>
+
+    <h1>
+      👋 Hello, I'm Marco<br>
+      <span class="accent portfolio-label">QA portfolio</span>
+    </h1>
+
+   <div class="hero-tags">
+  <a href="#manual-testing">🧪 Manual Testing</a>
+  <a href="#automation">⚙️ Automation</a>
+  <a href="#api-testing">🔗 API Testing</a>
+  <a href="#contact">🚀 CI/CD</a>
+</div>
   </div>
 
-  <!-- Manual Testing -->
+  <!-- MANUAL TESTING -->
   <section id="manual-testing" class="cards fade-in">
-    <h2> Manual Testing</h2>
+    <h2>Manual Testing</h2>
     <div class="card-grid">
       <a href="docs/manual_tests.html" class="card">
         <h3>Manual Tests</h3>
@@ -32,79 +44,80 @@
       </a>
       <a href="docs/test_plan.html" class="card">
         <h3>Test Plans</h3>
-        <p>Structured test plans including objectives, scope, and test design techniques for each project.</p>
+        <p>Structured test plans including objectives, scope, and test design techniques.</p>
       </a>
       <a href="docs/functional_testing/FT_index.html" class="card">
         <h3>Functional Tests</h3>
-        <p>Click to explore Bug Reports, Checklists, Dashboard, and Test Cases.</p>
+        <p>Bug reports, checklists, dashboards and structured test cases.</p>
       </a>
       <a href="docs/non_functional_testing/NF_index.html" class="card">
         <h3>Non-Functional Tests</h3>
-        <p>Performance, Usability, and Compatibility checks executed manually to ensure software quality.</p>
+        <p>Performance, usability and compatibility testing.</p>
       </a>
       <a href="docs/bug_reports.html" class="card">
         <h3>Bug Reports</h3>
-        <p>Detailed bug reports including steps to replicate, severity, priority, environment, attachments, and status tracking.</p>
+        <p>Detailed bug reports with severity, priority and reproduction steps.</p>
       </a>
       <a href="docs/checklists.html" class="card">
         <h3>QA Checklists</h3>
-        <p>Pre-release, regression, and smoke checklists to ensure coverage and quality across all test phases.</p>
+        <p>Regression, smoke and pre-release QA checklists.</p>
       </a>
     </div>
   </section>
 
-  <!-- Automation -->
+  <!-- AUTOMATION -->
   <section id="automation" class="cards fade-in">
-    <h2> Automation Testing </h2>
+    <h2>Automation Testing</h2>
     <div class="card-grid">
       <a href="https://github.com/marcolob/cypress-e2e-automation-framework" class="card" target="_blank">
-        <h3>Cypress UI automation framework - Demo </h3>
-        <p>An End-to-End automation framework for Web applications using Cypress. Includes test scripts, CI/CD workflow, and test suite.</p>
+        <h3>Cypress UI Automation Framework</h3>
+        <p>E2E automation framework with CI/CD and structured test suites.</p>
       </a>
       <a href="https://github.com/marcolob/cypress-igaming-demo" class="card" target="_blank">
-        <h3>Cypress iGaming - Demo</h3>
-        <p>A demo automation project for iGaming scenarios using Cypress. Includes example E2E tests and setup for quick experimentation.</p>
+        <h3>Cypress iGaming Demo</h3>
+        <p>Automation demo focused on iGaming flows and critical paths.</p>
       </a>
       <a href="#" class="card">
-        <h3>Playwright (Basic-Available soon)</h3>
-        <p>Basic Level automation examples using Playwright for Web & Mobile testing.</p>
+        <h3>Playwright (Coming soon)</h3>
+        <p>Basic automation examples for web testing.</p>
       </a>
     </div>
   </section>
 
-  <!-- API Testing -->
+  <!-- API TESTING -->
   <section id="api-testing" class="cards fade-in">
-    <h2> API Testing</h2>
+    <h2>API Testing</h2>
     <div class="card-grid">
       <a href="docs/api_tests.html" class="card">
         <h3>API Tests</h3>
-        <p>Postman collections and API testing examples with JSON schema validation, authentication flows, and edge-case handling.</p>
+        <p>Postman collections with schema validation and auth flows.</p>
       </a>
-
       <a href="docs/demo_project.html" class="card">
-        <h3>QA User Onboarding System – Demo </h3>
-        <p>This demo project showcases comprehensive QA testing including Postman API collections, mock server simulation, and manual UI/UX test cases.</p>
+        <h3>QA User Onboarding System – Demo</h3>
+        <p>API + UI testing with mock server and real QA scenarios.</p>
       </a>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills-section fade-in">
-    <h2> Skills</h2>
-    <ul>
-      <li>Manual Testing (Functional & Non-Functional)</li>
-      <li>Automation (Cypress / basic Playwright)</li>
-      <li>API Testing (Postman / RESTful API / JSON Schema)</li>
-      <li>CI/CD (GitHub Actions, Jenkins)</li>
-      <li>Bug Analysis & Reporting</li>
-      <li>Regression & Smoke Testing</li>
-      <li>Test Design Techniques</li>
-    </ul>
+  <!-- SKILLS -->
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills-section">
+      <ul>
+        <li>Manual Testing</li>
+        <li>Automation (Cypress)</li>
+        <li>API Testing</li>
+        <li>CI/CD</li>
+        <li>Bug Analysis</li>
+        <li>Regression Testing</li>
+        <li>Test Design</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- CONTACT -->
   <section id="contact" class="cards fade-in">
-    <h2> Contact</h2>
+    <h2>Contact</h2>
     <div class="card-grid">
       <div class="card">
         <h3>Marco Lo Bianco</h3>
@@ -112,11 +125,15 @@
       </div>
       <div class="card">
         <h3>LinkedIn</h3>
-        <p><a href="https://www.linkedin.com/in/marco-lo-bianco-869311b1" target="_blank">https://www.linkedin.com/in/marco-lo-bianco-869311b1</a></p>
+        <p>
+          <a href="https://www.linkedin.com/in/marco-lo-bianco-869311b1" target="_blank">
+            View profile
+          </a>
+        </p>
       </div>
       <div class="card">
         <h3>Open to</h3>
-        <p>Collaboration, learning opportunities, and QA Automation roles.</p>
+        <p>QA Automation roles & collaborations.</p>
       </div>
     </div>
   </section>
