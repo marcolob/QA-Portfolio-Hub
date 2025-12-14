@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,18 +17,29 @@
     margin: 0.5rem 0;
   }
   h1 { font-size: 28px; }
-  h2 { font-size: 22px; color: #0b3d91; }
+  h2 { font-size: 22px; color: #0b3d91; border-bottom: 2px solid #0b3d91; padding-bottom: 0.3rem; }
   h3 { font-size: 18px; color: #333; margin-bottom: 0.3rem; }
   p, li { font-size: 14px; margin: 0.2rem 0; }
   ul { padding-left: 1.2rem; }
   section { margin-bottom: 1.5rem; }
   .contact a { color: #0b3d91; text-decoration: none; }
   .contact a:hover { text-decoration: underline; }
-  .skills ul { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
-  .skills li { background: #e0e0e0; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 13px; }
-  .role { margin-bottom: 0.8rem; }
-  .company { font-weight: 600; }
+  .role { margin-bottom: 1rem; }
   .dates { font-style: italic; font-size: 13px; }
+
+  /* Skills list updated for normal bullets */
+  .skills ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin: 0.2rem 0;
+  }
+  .skills li {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 14px;
+    margin: 0.2rem 0;
+  }
 </style>
 </head>
 <body>
@@ -40,18 +51,23 @@
 
 <section>
   <h2>Professional Summary</h2>
-  <p>Experienced <strong>Full-Stack QA Engineer</strong> with 7+ years of cross-functional experience in Quality Assurance, Sales & Customer Operations, and Delivery Management within tech and iGaming sectors. Skilled in designing and executing detailed <strong>manual and automation test cases</strong> for <strong>web, mobile, and backend applications</strong>, performing <strong>API and integration testing</strong>, and ensuring product quality in <strong>Agile (Scrum, Kanban) and DevOps environments</strong>. Multilingual (Italian, English, Spanish), adaptable, and detail-oriented. Recently focused on <strong>QA automation upskilling</strong>, family, travel, and improving Spanish communication skills for relocation to Spain.</p>
+  <p>
+    Experienced <strong>Full-Stack QA Engineer</strong> with 7+ years of cross-functional experience in <strong>Quality Assurance</strong>, <strong>Sales & Customer Operations</strong>, and <strong>Delivery Management</strong> within tech and iGaming sectors. Skilled in designing and executing detailed <strong>manual and automation test cases</strong> for <strong>web, mobile, and backend applications</strong>, performing <strong>API and integration testing</strong>, and ensuring product quality in <strong>Agile (Scrum, Kanban)</strong> and <strong>DevOps environments</strong>. Multilingual (<strong>Italian, English, Spanish</strong>), adaptable, and detail-oriented.
+  </p>
+  <p>
+    <strong>Based in Spain, seeking a QA Engineer role</strong> to contribute hands-on testing skills and technical proficiency, while continuing to grow in <strong>automation</strong> and <strong>full-stack QA</strong>.
+  </p>
 </section>
 
 <section>
   <h2>Relevant Experience</h2>
 
   <div class="role">
-    <h3>Project & QA Automation Upskilling</h3>
-    <p class="dates">Nov 2024 – Oct 2025</p>
+    <h3>Career break - Project & QA Automation Upskilling</h3>
+    <p class="dates">Nov 2024 – present </p>
     <ul>
-      <li>Dedicated to family, travel (Spain, Canarias, South America), learning Spanish, and QA automation upskilling.</li>
-      <li>Practiced <strong>Cypress and Playwright automation</strong> with <strong>BDD & POM</strong> principles.</li>
+      <li>Dedicated to family, travel (Spain, Canarias, South America), learning Spanish for relocation to Spain, and QA automation upskilling.</li>
+      <li>Practiced <strong>Cypress and Playwright automation</strong> using <strong>BDD & POM</strong> principles.</li>
       <li>Practiced <strong>mock API testing</strong> with Mockoon and Beeceptor, and advanced <strong>Postman API testing</strong>.</li>
       <li>Exposure to <strong>CI/CD pipelines (GitHub Actions)</strong>, <strong>TestRail</strong>, and <strong>Jira</strong>.</li>
     </ul>
@@ -61,13 +77,12 @@
     <h3>QA Test Engineer – Loqus Business Intelligence | Malta</h3>
     <p class="dates">Nov 2021 – Nov 2024</p>
     <ul>
-      <li>Performed <strong>manual and automation testing</strong> (frontend, backend, mobile) including functional, non-functional, and exploratory testing.</li>
-      <li>Designed, executed, and maintained test cases across DEV, SIT, UAT, and PROD environments.</li>
-      <li>Automated tests with <strong>Cypress</strong>; practiced BDD & POM.</li>
-      <li>Conducted <strong>API and integration testing</strong> using Postman; validated XML/JSON responses.</li>
-      <li>Supported <strong>BAU tasks</strong>, defect triage, and UAT.</li>
-      <li>Worked in Agile teams, collaborating with PMs, BAs, and developers.</li>
-      <li>Exposure to DB/DevOps tools: AWS S3, Azure Blob, MongoDB; basic SQL queries.</li>
+      <li>Performed Manual and API Testing across multiple client projects and environments, including full Sanity, Functional, Non-Functional, and Exploratory testing.</li>
+      <li>Automated tests with Cypress using BDD & POM practices.</li>
+      <li>Conducted API and Integration testing with Postman, validating XML/JSON responses.</li>
+      <li>Supported BAU tasks, defect triage, and UAT.</li>
+      <li>Collaborated in Agile teams with PMs, BAs, and developers.</li>
+      <li>Basic experience with DB/DevOps tools: AWS S3, Azure Blob, MongoDB; executed SQL queries.</li>
     </ul>
   </div>
 
@@ -83,7 +98,8 @@
     <h3>Customer Experience Advisor – LeoVegas AB | Malta</h3>
     <p class="dates">Jan 2021 – May 2021</p>
     <ul>
-      <li>Delivered support, compliance, and KYC/AML checks; collaborated with CRM, payments, trading, and affiliate teams.</li>
+      <li>Delivered player support, managed compliance/KYC/AML checks for Italy, UK, Brazil.</li>
+      <li>Collaborated with CRM, payments, trading, and affiliate teams.</li>
     </ul>
   </div>
 
@@ -91,15 +107,31 @@
     <h3>Lead Customer Service Agent – Paddy Power Betfair | Malta</h3>
     <p class="dates">Sep 2019 – Dec 2020</p>
     <ul>
-      <li>Promoted rapidly to Lead; performed cross-department collaboration for player support, compliance, and QA oversight.</li>
+      <li>Promoted from Support Agent → Senior → Lead within 1 year.</li>
+      <li>Delivered player support, compliance checks, and cross-department collaboration (risk, fraud, payment, trading, CRM, marketing).</li>
     </ul>
   </div>
 
   <div class="role">
-    <h3>Other Roles (2011 – 2019)</h3>
+    <h3>Customer Service Representative – Segretaria24 (Ebuero group) |Malta & Berlin </h3>
+    <p class="dates">2018 – 2019</p>
     <ul>
-      <li>Customer Service Representative – Segretaria24 (Ebuero group) | Berlin & Malta | 2018 – 2019</li>
-      <li>Trading Account Manager – ZP Services - FXGM | Malta | 2017</li>
+      <li>Managed client communications, scheduling, and documentation in Italian and English.</li>
+      <li>Spent 8 months in Berlin HQ for advanced training.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Trading Account Manager – ZP Services - FXGM | Malta</h3>
+    <p class="dates">May 2017 – Nov 2017</p>
+    <ul>
+      <li>Managed 50–100 client portfolios, providing trading training, insights, and support.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Other Roles (2011 – 2016)</h3>
+    <ul>
       <li>Sales Agent – Kuwait Petroleum Italia (Q8) | Palermo | 2014 – 2016</li>
       <li>Sales Representative – CR Ricambi | Palermo | 2012 – 2013</li>
       <li>Sales Agent – 4U Servizi Spa | Palermo | 2011 – 2012</li>
@@ -107,6 +139,7 @@
   </div>
 
 </section>
+
 
 <section>
   <h2>Education & Certifications</h2>
@@ -132,15 +165,5 @@
     <li>Basic SQL, HTML, CSS, JavaScript</li>
   </ul>
 </section>
-
-<section class="contact">
-  <h2>Contact</h2>
-  <ul>
-    <li>Email: m.lobianco@hotmail.it</li>
-    <li>LinkedIn: <a href="https://linkedin.com/in/marco-lo-bianco-869311b1" target="_blank">View Profile</a></li>
-    <li>GitHub: <a href="https://github.com/marcolob" target="_blank">github.com/marcolob</a></li>
-  </ul>
-</section>
-
 </body>
 </html>
