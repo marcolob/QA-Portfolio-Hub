@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Functional Analysis & User Stories</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero fade-in">
+    <span class="hero-badge">QA ENGINEER • FUNCTIONAL ANALYSIS</span>
+    <h1>
+      Functional Analysis<br>
+      <span class="accent portfolio-label">User Stories</span>
+    </h1>
+  </div>
+
+  <!-- INTRO -->
+  <section class="fade-in">
+    <div class="card">
+      <p>
+        This section showcases functional analysis activities performed from a
+        <strong>QA Engineer perspective</strong>, including user story review,
+        acceptance criteria definition, edge case identification,
+        API-level reasoning, and UAT support.
+      </p>
+<p>
+  The examples below are based on the
+  <a href="../demo_project.html" target="_blank">
+    <strong>Demo Web App – User Management</strong>
+  </a>,
+  a QA demo project including UI, API and functional testing.
+</p>
+    </div>
+  </section>
+
+  <!-- STORY 1 -->
+  <section class="fade-in">
+    <h2>1. Create New User – UI Flow</h2>
+
+    <div class="card">
+      <p><strong>Project:</strong> Demo Web App – User Management<br>
+         <strong>Role:</strong> QA Engineer with Functional Analysis responsibilities</p>
+
+      <h3>User Story</h3>
+      <blockquote>
+        <em>As an administrator, I want to create a new user through a form,
+        so that I can manage platform access.</em>
+      </blockquote>
+
+      <h3>Functional Requirements</h3>
+      <ul>
+        <li>Create user with First Name, Last Name, Email and Role</li>
+        <li>All fields are mandatory</li>
+        <li>Email must be unique</li>
+        <li>User is saved and visible in the users list</li>
+        <li>Success message is displayed</li>
+      </ul>
+
+      <h3>Acceptance Criteria</h3>
+      <pre>
+AC1 – All mandatory fields must be filled
+AC2 – Email must be unique
+AC3 – Email must have a valid format
+AC4 – Created user appears in the users list
+AC5 – Success message is displayed
+      </pre>
+
+      <h3>Functional Analysis Notes</h3>
+      <ul>
+        <li>Email uniqueness is case-insensitive</li>
+        <li>Form resets after successful submission</li>
+        <li>Role selection affects permissions</li>
+        <li>Backend errors must be handled gracefully</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STORY 2 -->
+  <section class="fade-in">
+    <h2>2. API Functional Story – POST /users</h2>
+
+    <div class="card">
+      <h3>API User Story</h3>
+      <blockquote>
+        <em>As a system administrator, I want to create users via API,
+        so that frontend and external systems can persist users consistently.</em>
+      </blockquote>
+
+      <h3>Endpoint</h3>
+      <pre>POST /users</pre>
+
+      <h3>Request Payload</h3>
+      <pre>
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@mail.com",
+  "role": "USER"
+}
+      </pre>
+
+      <h3>Acceptance Criteria</h3>
+      <pre>
+AC1 – Valid request returns 201 Created
+AC2 – Duplicate email returns 409 Conflict
+AC3 – Missing mandatory fields return 400 Bad Request
+AC4 – Invalid role returns 400 Bad Request
+      </pre>
+    </div>
+  </section>
+
+  <!-- STORY 3 -->
+  <section class="fade-in">
+    <h2>3. Negative Flow – Error Handling</h2>
+
+    <div class="card">
+      <blockquote>
+        <em>As an administrator, I want to receive clear error messages when
+        something goes wrong, so that I understand how to proceed.</em>
+      </blockquote>
+
+      <ul>
+        <li>Backend service unavailable</li>
+        <li>Validation error from API</li>
+        <li>Timeout during user creation</li>
+      </ul>
+
+      <pre>
+AC1 – Clear error message is displayed
+AC2 – No partial user is created
+AC3 – User can retry the action
+      </pre>
+    </div>
+  </section>
+
+  <!-- STORY 4 -->
+  <section class="fade-in">
+    <h2>4. Edit & Delete User – Advanced Flow</h2>
+
+    <div class="card">
+      <blockquote>
+        <em>As an administrator, I want to edit or delete existing users,
+        so that I can keep user data accurate and up to date.</em>
+      </blockquote>
+
+      <ul>
+        <li>Edit user details except email</li>
+        <li>Email field is read-only</li>
+        <li>Delete user with confirmation</li>
+        <li>Deleted user is removed from the list</li>
+      </ul>
+
+      <pre>
+AC1 – Edited user data is saved correctly
+AC2 – Email field is read-only during edit
+AC3 – Deleted user no longer appears in the list
+AC4 – Deletion requires confirmation
+      </pre>
+    </div>
+  </section>
+
+  <a href="FT_index.html" class="back-home">← Back to Functional Index</a>
+
+</div>
+
+</body>
+</html>
