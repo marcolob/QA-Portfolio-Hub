@@ -111,7 +111,7 @@ Each bug includes:
 - Expected result  
 - Actual result  
 - Severity & priority  
-- Screenshot placeholder  
+- Screenshot
 
 ### ✔️ Checklists
 - Regression suite  
