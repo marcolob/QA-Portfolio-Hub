@@ -25,7 +25,6 @@ This portfolio demonstrates how I approach QA in a structured and professional w
 ---
 
 ## 📂 Repository Structure
-
 QA-Portfolio-Hub/
 ├── README.md
 ├── index.html
@@ -51,12 +50,13 @@ QA-Portfolio-Hub/
 │ ├── NF_Usability.html
 │ └── NF_Compatibility.html
 ├── docs/demo_project.html
+├── docs/manual_igaming_demo.html ← nuovo
 ├── bug_reports/
 ├── reports/
 ├── screenshots/
 └── cypress/
-    ├── cypress-igaming-demo/
-    └── cypress-e2e-automation-framework/
+├── cypress-igaming-demo/
+└── cypress-e2e-automation-framework/
 
 ---
 
@@ -71,6 +71,7 @@ Complete document describing scope, strategy, test types, environments, entry/ex
 - Positive, negative, edge scenarios  
 - Expected vs. Actual Results  
 - Regression coverage  
+- Cypress iGaming Demo: End-to-end automation for gaming features, including CI/CD workflow. View Demo: https://marcolob.github.io/QA-Portfolio-Hub/docs/manual_igaming_demo.html
 
 ### ✔️ Automation
 - **Cypress iGaming Demo**:  
@@ -111,14 +112,14 @@ Each bug includes:
 - Expected result  
 - Actual result  
 - Severity & priority  
-- Screenshot
+- Screenshot placeholder  
 
 ### ✔️ Checklists
 - Regression suite  
 - Pre-release checklist  
 - Smoke checklist  
 
-### ✔️ Functional Testing (Updated)
+### ✔️ Functional Testing
 - **Index**: [FT Index](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_index.html) – Overview of all functional testing documents  
 - **Bug Reports**: [FT Bug Reports](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Bug_Reports.html) – Detailed bug reports with steps, severity, priority, TestRail/Jira links  
 - **Checklists**: [FT Checklists](https://marcolob.github.io/QA-Portfolio-Hub/docs/functional_testing/FT_Checklists.html) – Pre-release, regression, smoke test checklists  
